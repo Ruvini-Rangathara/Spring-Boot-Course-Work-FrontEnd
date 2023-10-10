@@ -1,6 +1,11 @@
 body {
     font-family: "Lato", sans-serif;
 }
+
+#time{
+    font-size: 4rem;
+}
+
 .background {
     margin-top: 20px;
     background: url("https://images.pexels.com/photos/91224/pexels-photo-91224.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
