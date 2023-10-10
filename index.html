@@ -12,8 +12,25 @@
     <title>Next Travel PVT Ltd.</title>
 
     <link href="assert/stylesheet/nav_bar.css" rel="stylesheet">
+    <link href="assert/stylesheet/welcome_page.css" rel="stylesheet">
+
+
     <link href="assert/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="assert/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 0;
+            background-color: transparent;
+        }
+
+        .navbar-mainbg {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
 
     <script src="assert/jquery-3.7.0.min.js"></script>
 </head>
@@ -56,12 +73,45 @@
     </div>
 </nav>
 
+<!--===================================   Welcome Page   ================================-->
+<div class="background">
+    <div class="container">
+        <div class="row flex-column justify-content-center align-items-center text-center">
+            <div class="col-sm-12 col-md-10 col-lg-8">
+                <h1 id="time">12:00 AM</h1>
+                <h3 id="day" class="display-5">Monday, January 01</h3>
+                <h2 id="greeting">Good Morning, Traveler.</h2>
+                <h3>What would you like to inquire about today?</h3>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
+
+
+<!--==============================      ============================================-->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
 
 
 
 
 <!--==============================   JS Files   ============================-->
 <script src="assert/javaScript/nav_bar.js"></script>
+<script src="assert/javaScript/welcome_page.js"></script>
+
+
 <script src="assert/jquery-3.7.0.min.js"></script>
 
 
