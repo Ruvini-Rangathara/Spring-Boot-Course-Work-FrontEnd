@@ -1,0 +1,17 @@
+#about_us_middle_div{
+    width: 50px;
+}
+
+#about_us_section{
+    margin: 50px 200px 50px 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#about_us_second_section{
+    display: flex;
+}
+
+#about_us_first_div, #about_us_third_div{
+    width: 600px;
+}

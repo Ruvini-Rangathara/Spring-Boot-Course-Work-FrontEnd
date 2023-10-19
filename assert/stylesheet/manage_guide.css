@@ -1,3 +1,5 @@
+
+
 #guide_view{
     border-radius: 20px;
     border: 1px solid black;
@@ -43,6 +45,8 @@
     width: 75px;
     color: white;
     margin-bottom: 10px;
+
+
 }
 
 
@@ -51,14 +55,17 @@
 
 
 
-
+#manage_guide{
+    margin-top: 100px;
+    z-index: 2;
+}
 
 #guide_section{
     padding: 20px 40px;
 }
 
 #guide_form{
-    /*background-color: #3dd5f3;*/
+    background-color: white;
     border-radius: 20px;
     border: 1px solid black;
     margin: 0 200px 0 200px;

@@ -13,6 +13,7 @@
 
     <link href="assert/stylesheet/nav_bar.css" rel="stylesheet">
     <link href="assert/stylesheet/welcome_page.css" rel="stylesheet">
+    <link href="assert/stylesheet/about_us.css" rel="stylesheet">
     <link href="assert/stylesheet/manage_guide.css" rel="stylesheet">
     <link href="assert/stylesheet/footer.css" rel="stylesheet">
 
@@ -36,12 +37,13 @@
 
     <script src="assert/jquery-3.7.0.min.js"></script>
 </head>
-<body>
+<body id="body">
 
 <!--=================================  Navigation Bar   ============================-->
 <nav class="navbar navbar-expand-custom navbar-mainbg" style="padding-bottom: 0">
     <a class="navbar-brand navbar-logo" href="#">Next Travel PVT Ltd.</a>
-    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
             type="button">
         <i class="fas fa-bars text-white"></i>
     </button>
@@ -53,6 +55,9 @@
             </div>
             <li class="nav-item active">
                 <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="fas fa-address-book"></i>About Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0);"><i class="fas fa-table-list"></i>Package</a>
@@ -83,15 +88,75 @@
             <div class="col-sm-12 col-md-10 col-lg-8">
                 <h1 id="time">12:00 AM</h1>
                 <h3 class="display-5" id="day">Monday, January 01</h3>
-                <h2 id="greeting">Good Morning, Traveler.</h2>
+                <h2 id="greeting">Good Morning, User.</h2>
                 <h3>What would you like to inquire about today?</h3>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div>
 
+<br>
+<br>
 
-<!--==============================      ============================================-->
+<!--====================================   About Us   ============================================-->
+
+<section id="about_us_section">
+    <section id="about_us_second_section">
+        <div id="about_us_first_div">
+            <h2>Our Journey</h2>
+            <p>
+                In 2010, Next Travel Pvt Ltd was founded by our visionary CEO and Founder, Ravi. Our primary goal was to
+                provide personalized travel experiences and quickly gathered a team of talented individuals, with Miss
+                Ruvini Rangathara being a key contributor to our growth.
+
+                Guided by Ravi's vision, we expanded rapidly, always driven by the commitment to excellence and customer
+                feedback. Sri Lanka was our initial focus, where we became a trusted online travel partner for tailor-made
+                tours. Thanks to our dedication and word-of-mouth referrals, we ventured into captivating global
+                destinations.
+
+                Today, with over 200 dedicated team members, we remain firm in our belief that personalized travel is the
+                key to savoring a destination. Miss Ruvini Rangathara plays a vital role in ensuring our travel package
+                selection system, including guides, vehicles, hotels, and rooms, enhances your journey.
+
+                We're proud to champion equality with a workforce consisting of 75% women. Furthermore, we're passionate
+                about empowering the younger generation to lead us into a promising future.
+
+                At Next Travel Pvt Ltd, we're here to guide you through the world's adventures.</div>
+
+        <div id="about_us_middle_div"></div>
+        <div id="about_us_third_div">
+            <h2>Vision</h2>
+            <p>
+                To become the world's foremost provider of tailor-made travel experiences, setting the standard for
+                personalized adventures across the globe.
+            </p>
+            <h2>Mission</h2>
+            <p>- We are dedicated to crafting unforgettable journeys that cater to the unique needs and desires of our
+                travelers.</P>
+            <p>- We will continuously innovate and adapt to ensure that our travel experiences remain unparalleled and
+                exceed the expectations of our customers.</P>
+            <p>- We prioritize excellence in customer service, always seeking feedback to refine and improve our
+                offerings.</P>
+            <p>- Our mission is to make every journey with Next Travel Pvt Ltd a memorable and enriching experience,
+                embracing the diverse wonders of the world.</p>
+        </div>
+    </section>
+
+
+    <div>
+        <br>
+        <h2>The Team & Dedication</h2>
+        <p>
+            Next Travel Pvt Ltd boasts a dynamic and dedicated team comprising 200 members stationed
+            across the globe in various key offices. Our team is our greatest pride and the most
+            valuable asset at Next Travel Pvt Ltd. Our representatives are not only professional
+            and friendly but also filled with boundless energy and unwavering dedication. They will
+            always welcome our customers with a sincere and heartwarming smile!</p>
+    </div>
+</section>
+
+
+
 
 <br>
 <br>
@@ -99,8 +164,7 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 <!--=====================================   guide view  ===================================-->
 <section id="guide_view">
@@ -272,7 +336,6 @@
         </div>
 
     </div>
-
 
 </section>
 
