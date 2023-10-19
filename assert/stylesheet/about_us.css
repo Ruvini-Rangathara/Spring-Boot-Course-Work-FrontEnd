@@ -3,9 +3,12 @@
 }
 
 #about_us_section{
-    margin: 50px 200px 50px 200px;
+    margin: 25px 150px 25px 150px;
+    padding: 25px 50px 45px 50px;
     display: flex;
     flex-direction: column;
+    background-color: #f4f0ec;
+    border-radius: 20px;
 }
 
 #about_us_second_section{
@@ -15,3 +18,13 @@
 #about_us_first_div, #about_us_third_div{
     width: 600px;
 }
+
+#about_us_image_section{
+    display: flex;
+    width: 200px;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
