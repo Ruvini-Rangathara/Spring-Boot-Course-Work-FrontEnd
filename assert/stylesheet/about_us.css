@@ -28,3 +28,51 @@
 
 }
 
+#why_choose_us{
+    margin: 50px 200px 50px 200px;
+    padding: 25px 50px 45px 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #e9ffdb;
+}
+
+#why_choose_us h3{
+    color: green;
+}
+
+#about_us_end_section{
+    margin: 50px;
+    background-color: #d1d2d4;
+    display: flex;
+}
+
+#about_us_end_div{
+    width: 100%;
+}
+
+#about_us_end_img1{
+    margin: 15px 50px 15px 100px;
+    width: 130px;
+    height: fit-content;
+}
+
+#about_us_end_img2{
+    margin: 15px 0px 15px 0px;
+    width: 350px;
+    height: fit-content;
+}
+
+
+
+#about_us_end_second_div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0f5132;
+}
+
+#about_us_end_div{
+    display: flex;
+}
