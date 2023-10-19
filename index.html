@@ -13,6 +13,7 @@
 
     <link href="assert/stylesheet/nav_bar.css" rel="stylesheet">
     <link href="assert/stylesheet/welcome_page.css" rel="stylesheet">
+    <link href="assert/stylesheet/manage_guide.css" rel="stylesheet">
     <link href="assert/stylesheet/footer.css" rel="stylesheet">
 
 
@@ -100,8 +101,120 @@
 <br>
 <br>
 
+<section id="manage_guide">
+    <div id="guide_form">
+        <div id="close_btn_div">
+            <button id="btn_close_guide_form">X</button>
+        </div>
+        <p id="manage_guide_head">Manage Guide Form</p>
+        <div id="guide_form_item">
+            <div id="add_guide_photo_section">
+                <img src="assert/image/travelImage2.jpg" id="add_guide_photo">
+
+                <button id="btn_add_guide_photo">Add Photo</button>
+            </div>
+
+            <div>
+                <br>
+                <label for="guide_id">Guide ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label><br>
+                <input type="text" id="guide_id"><br>
+
+            </div>
+            <div>
+                <label for="guide_name">Guide Name : </label><br>
+                <input type="text" id="guide_name">
+            </div>
+
+            <div>
+                <label for="guide_age">Guide Age&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
+                <input type="text" id="guide_age">
+
+            </div>
+            <div id="guide_gender_section">
+                <label>Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                <input type="radio" id="guide_male" name="guide_gender" value="MALE">
+                <label for="guide_male" style="margin-right: 30px">&nbsp;&nbsp;Male</label><br>
+                <input type="radio" id="guide_female" name="guide_gender" value="FEMALE">
+                <label for="guide_female">&nbsp;&nbsp;Female</label><br>
+            </div>
+
+            <div>
+                <label for="guide_address">Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
+                <input type="text" id="guide_address">
+            </div>
+            <div>
+                <label for="guide_contact">Contact No &nbsp; : </label><br>
+                <input type="tel" id="guide_contact">
+            </div>
+            <div id="guide_experience_section">
+                <div style="margin-right: 40px">
+                    <label for="man_day_value">Man Day Value : </label><br>
+                    <input type="text" id="man_day_value" style="width: 230px"></div>
+                <div>
+                    <label for="guide_experience">Experience &nbsp; : </label><br>
+                    <input type="text" id="guide_experience" style="width: 230px">
+                </div>
+            </div>
+
+<!--            =====================  nic images  =====================-->
+            <div id="nic_images">
+                <div>
+                    <img src="assert/image/travelImage2.jpg" id="guide_nic_front">
+                    <label>NIC Front Image</label>
+                    <button id="btn_guide_nic_front">Add</button>
+                </div>
+                <div id="nic_images_middle_div"></div>
+                <div>
+                    <img src="assert/image/travelImage2.jpg" id="guide_nic_back">
+                    <label>NIC Back Image</label>
+                    <button id="btn_guide_nic_back">Add</button>
+                </div>
+            </div>
+
+            <!--            =====================  guide id images  =====================-->
+            <div id="guide_id_images">
+                <div>
+                    <img src="assert/image/travelImage2.jpg" id="guide_id_front">
+                    <label>Guide ID Front Image</label>
+                    <button id="btn_guide_id_front">Add</button>
+                </div>
+                <div id="guide_id_images_middle_div"></div>
+                <div>
+                    <img src="assert/image/travelImage2.jpg" id="guide_id_back">
+                    <label>Guide ID Back Image</label>
+                    <button id="btn_guide_id_back">Add</button>
+                </div>
+            </div>
+
+            <div>
+                <br>
+                <label for="guide_remark">Remark &nbsp; : </label><br>
+                <textarea id="guide_remark"></textarea>
+            </div>
+
+        </div>
+        <br>
+
+        <div>
+            <button id="add_guide">Add Guide</button>
+            <button id="update_guide">Update</button>
+            <button id="delete_guide">Delete</button>
+        </div>
+
+    </div>
 
 
+
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!--==============================   Footer   ============================-->
 <div class="pg-footer">
@@ -238,6 +351,7 @@
 <!--==============================   JS Files   ============================-->
 <script src="assert/javaScript/nav_bar.js"></script>
 <script src="assert/javaScript/welcome_page.js"></script>
+<script src="assert/javaScript/manage_guide.js"></script>
 
 
 <script src="assert/jquery-3.7.0.min.js"></script>
