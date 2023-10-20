@@ -22,8 +22,3 @@ document.getElementById("btn_close_guide_form").addEventListener("click", functi
 });
 
 
-
-
-// document.getElementById('btn_view_guide1').addEventListener('click', function() {
-//     document.getElementById('guide_view').classList.add('blur');
-// });
