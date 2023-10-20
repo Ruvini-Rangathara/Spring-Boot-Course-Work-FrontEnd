@@ -1,10 +1,10 @@
-// Hide the manage_guide section when the website loads
-document.getElementById("manage_guide").style.display = "none";
+// Hide the manage_user section when the website loads
+document.getElementById("manage_user").style.display = "none";
 
 // Add a click event listener to the btn_view_guide1 button
 document.getElementById("btn_view_guide1").addEventListener("click", function () {
-    // Show the manage_guide section
-    const manageGuide = document.getElementById("manage_guide");
+    // Show the manage_user section
+    const manageGuide = document.getElementById("manage_user");
     manageGuide.style.display = "block";
 
     // Position it at the top of the currently visible display
@@ -16,8 +16,8 @@ document.getElementById("btn_view_guide1").addEventListener("click", function ()
 
 // Add a click event listener to the btn_close_guide_form button
 document.getElementById("btn_close_guide_form").addEventListener("click", function () {
-    // Hide the manage_guide section
-    const manageGuide = document.getElementById("manage_guide");
+    // Hide the manage_user section
+    const manageGuide = document.getElementById("manage_user");
     manageGuide.style.display = "none";
 });
 

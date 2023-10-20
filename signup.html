@@ -5,6 +5,7 @@
     <title>Next Travel PVT Ltd.</title>
     <link href="assert/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="assert/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="assert/stylesheet/signup.css" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/35c4f0c859.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +36,7 @@
                             <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Username" /></div>
                             <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" /></div>
                             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Next</button></div>
-                            <p class="text-muted">&lt;- Back</p>
+                            <a href="login.html" class="text-muted">&lt;- Back</a>
                         </form>
                     </div>
                 </div>
@@ -43,6 +44,99 @@
         </div>
     </div>
 </section>
+
+
+
+<section id="manage_user">
+    <div id="user_form">
+        <div id="close_btn_div">
+            <button id="btn_close_user_form">X</button>
+        </div>
+        <p id="manage_user_head">Manage Guide Form</p>
+        <div id="user_form_item">
+            <div id="add_user_photo_section">
+                <img id="add_user_photo" src="assert/image/travelImage2.jpg">
+
+                <button id="btn_add_user_photo">Add Photo</button>
+            </div>
+
+            <div>
+                <br>
+                <label for="user_id">Guide ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label><br>
+                <input id="user_id" type="text"><br>
+
+            </div>
+            <div>
+                <label for="user_name">Guide Name : </label><br>
+                <input id="user_name" type="text">
+            </div>
+
+            <div>
+                <label for="user_age">Guide Age&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
+                <input id="user_age" type="text">
+
+            </div>
+            <div id="user_gender_section">
+                <label>Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                <input id="user_male" name="user_gender" type="radio" value="MALE">
+                <label for="user_male" style="margin-right: 30px">&nbsp;&nbsp;Male</label><br>
+                <input id="user_female" name="user_gender" type="radio" value="FEMALE">
+                <label for="user_female">&nbsp;&nbsp;Female</label><br>
+            </div>
+
+            <div>
+                <label for="user_address">Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
+                <input id="user_address" type="text">
+            </div>
+            <div>
+                <label for="user_contact">Contact No &nbsp; : </label><br>
+                <input id="user_contact" type="tel">
+            </div>
+            <div id="user_experience_section">
+                <div style="margin-right: 40px">
+                    <label for="man_day_value">Man Day Value : </label><br>
+                    <input id="man_day_value" style="width: 230px" type="text"></div>
+                <div>
+                    <label for="user_experience">Experience &nbsp; : </label><br>
+                    <input id="user_experience" style="width: 230px" type="text">
+                </div>
+            </div>
+
+            <!--            =====================  nic images  =====================-->
+            <div id="nic_images">
+                <div>
+                    <img id="user_nic_front" src="assert/image/travelImage2.jpg">
+                    <label>NIC Front Image</label>
+                    <button id="btn_user_nic_front">Add</button>
+                </div>
+                <div id="nic_images_middle_div"></div>
+                <div>
+                    <img id="user_nic_back" src="assert/image/travelImage2.jpg">
+                    <label>NIC Back Image</label>
+                    <button id="btn_user_nic_back">Add</button>
+                </div>
+            </div>
+
+
+            <div>
+                <br>
+                <label for="user_remark">Remark &nbsp; : </label><br>
+                <textarea id="user_remark"></textarea>
+            </div>
+
+        </div>
+        <br>
+
+        <div>
+            <button id="add_user">Add Guide</button>
+            <button id="update_user">Update</button>
+            <button id="delete_user">Delete</button>
+        </div>
+
+    </div>
+
+</section>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
