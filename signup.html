@@ -17,16 +17,6 @@
 
 
     <style>
-        body{
-            padding-top: 25px;
-            background-image: url('assert/image/bg3.jpg');
-            height: 100vh;
-            background-size: cover;
-            background-repeat: repeat;
-            background-attachment: fixed;
-            backdrop-filter: blur(6px);
-            overflow: hidden;
-        }
 
         #user_p_div{
             margin-bottom: 10px;
@@ -73,92 +63,41 @@
 </section>
 
 <!--==========================================  register user  ===========================================-->
-<section id="manage_user">
-    <div id="user_form">
-        <div id="close_btn_div">
-            <button id="btn_close_user_form">X</button>
-        </div>
-        <p id="manage_user_head">Sign Up For Next Travel PVT Ltd.</p>
-        <br>
-        <div id="user_form_item">
-
-            <div>
-                <br>
-                <label for="popup_username">Username &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label><br>
-                <input id="popup_username" type="text"><br>
-
-            </div>
-            <div>
-                <label for="popup_password">Password : </label><br>
-                <input id="popup_password" type="password">
-            </div>
-
-            <div>
-                <label for="user_email">Guide Email&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
-                <input id="user_email" type="text">
-            </div>
-
-            <div>
-                <label for="user_age">Guide Age&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
-                <input id="user_age" type="text">
-            </div>
-
-            <div id="user_gender_section">
-                <label>Gender :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
-                <input id="user_male" name="user_gender" type="radio" value="MALE">
-                <label for="user_male" style="margin-right: 30px">&nbsp;&nbsp;Male</label><br>
-                <input id="user_female" name="user_gender" type="radio" value="FEMALE">
-                <label for="user_female">&nbsp;&nbsp;Female</label><br>
-            </div>
-
-            <div>
-                <label for="user_address">Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label><br>
-                <input id="user_address" type="text">
-            </div>
-            <div>
-                <label for="user_contact">Contact No &nbsp; : </label><br>
-                <input id="user_contact" type="tel">
-            </div>
-
-            <div>
-                <label for="userNicPassportNo">NIC/Passport No : </label><br>
-                <input id="userNicPassportNo" type="text">
-            </div>
-
-
-            <!--            =====================  nic images  =====================-->
-            <div id="nic_images">
-                <div>
-                    <img id="user_nic_front" src="assert/image/travelImage2.jpg">
-                    <label>NIC Front Image</label>
-                    <button id="btn_user_nic_front">Add</button>
+<div id="user_profile" class="container profile profile-view">
+    <form>
+        <div class="row profile-row">
+            <div class="col-md-12">
+                <h1>Profile </h1>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="form-group mb-3"><label class="form-label" style="padding-top: 0px;margin-top: 7px;">Name</label><input class="form-control" type="text" name="firstname" /></div>
+                    </div>
                 </div>
-                <div id="nic_images_middle_div"></div>
-                <div>
-                    <img id="user_nic_back" src="assert/image/travelImage2.jpg">
-                    <label>NIC Back Image</label>
-                    <button id="btn_user_nic_back">Add</button>
+                <div class="form-group mb-3"><label class="form-label" style="margin-top: 19px;padding-bottom: 0px;padding-top: 0px;">Address</label><input class="form-control" type="email" autocomplete="off" required name="email" /></div>
+                <div class="row">
+                    <div class="col"><label class="form-label">Age </label><input class="form-control" type="password" name="password" autocomplete="off" required /></div>
+                    <div class="col-md-2"><label class="form-label" style="margin-right: 35px;padding-left: 0px;padding-top: 2px;margin-top: 5px;padding-right: 0px;margin-left: 35px;">Gender </label>
+                        <div class="form-check" style="margin-left: 33px;"><input id="formCheck-2" class="form-check-input" type="radio" /><label class="form-check-label" for="formCheck-2">Male</label></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check" style="padding-bottom: 0px;margin-top: 39px;"><input id="formCheck-1" class="form-check-input" type="radio" /><label class="form-check-label" for="formCheck-1">Female</label></div>
+                    </div>
+                </div><label class="form-label" style="margin-top: 16px;">Email</label><input class="form-control" type="email" autocomplete="off" required name="email" /><label class="form-label" style="margin-top: 14px;">Contact No</label><input class="form-control" type="email" autocomplete="off" required name="email" /><label class="form-label" style="margin-top: 19px;">NIC/Passport No</label><input class="form-control" type="email" autocomplete="off" required name="email" />
+                <div class="row">
+                    <div class="col-sm-12 col-md-6"><label class="form-label" style="padding-bottom: 0px;padding-top: 24px;">NIC/Passport Front Image</label><input class="form-control form-control" type="file" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;" /></div>
+                    <div class="col-sm-12 col-md-6"><label class="form-label" style="padding-top: 24px;">NIC/Passport Back Image</label><input class="form-control form-control" type="file" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;" /></div>
+                    <div class="col"><label class="form-label" style="padding-top: 24px;">Remark</label><input class="form-control" type="text" name="firstname" style="margin-bottom: 25px;" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 content-right" style="padding-bottom: 0px;"><button class="btn btn-primary form-btn" type="submit">SAVE </button><button class="btn btn-danger form-btn" type="reset">CANCEL </button>
+                        <hr />
+                    </div>
                 </div>
             </div>
-
-
-            <div>
-                <br>
-                <label for="user_remark">Remark &nbsp; : </label><br>
-                <textarea id="user_remark"></textarea>
-            </div>
-
         </div>
-        <br>
-
-        <div>
-            <button id="add_user">Register</button>
-        </div>
-
-    </div>
-
-</section>
-
+    </form>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
