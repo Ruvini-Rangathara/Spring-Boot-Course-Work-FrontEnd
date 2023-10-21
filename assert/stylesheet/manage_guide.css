@@ -1,9 +1,26 @@
+.guide_grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+    grid-auto-rows: minmax(auto, 1fr); /* Dynamic rows based on content */
+    gap: 10px; /* Adjust the gap between grid items as needed */
+}
 
+.guide_grid_item {
+    /*border: 1px solid #000;*/
+    padding: 10px;
+    text-align: center;
+}
+
+.img_guide{
+    border: 1px solid black;
+    width: 250px;
+    height: auto;
+}
 
 #guide_view{
-    border-radius: 20px;
-    border: 1px solid black;
-    margin: 100px 200px 0 200px;
+    /*border-radius: 20px;*/
+    /*border: 1px solid black;*/
+    margin: 0px 200px 0 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,33 +28,7 @@
     padding: 20px 50px 30px 50px;
 }
 
-#guide_view div{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#guide_view div div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#guide_view div div img{
-    border: 1px solid black;
-    width: 250px;
-    height: auto;
-}
-
-.guide_view_middle_div{
-    width: 30px;
-}
-
-#btn_view_guide1, #btn_view_guide2, #btn_view_guide3,#btn_view_guide4,
-#btn_view_guide5, #btn_view_guide6, #btn_view_guide7,
-#btn_view_guide8, #btn_view_guide9{
+.btn_guide_view{
     padding: 0px 3px 0px 3px;
     border-radius: 10px;
     border: 1px solid black;
@@ -68,7 +59,7 @@
     background-color: white;
     border-radius: 20px;
     border: 1px solid black;
-    margin: 0 200px 0 200px;
+    margin: 0 250px 0 250px;
     display: flex;
     justify-content: center;
     align-items: center;
