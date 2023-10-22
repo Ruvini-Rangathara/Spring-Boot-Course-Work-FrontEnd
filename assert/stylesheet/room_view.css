@@ -1,0 +1,22 @@
+.fit-cover {
+    object-fit: cover;
+}
+
+.room_view_container{
+    color: black;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+#room_view_sub_div{
+    padding-left: 50px;
+}
+
+.room_add_to_cart_btn{
+    border-radius: 5px;
+    width: 75px;
+    height: 30px;
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+}
