@@ -14,7 +14,7 @@
     <link href="assert/stylesheet/nav_bar.css" rel="stylesheet">
     <link href="assert/stylesheet/welcome_page.css" rel="stylesheet">
     <link href="assert/stylesheet/about_us.css" rel="stylesheet">
-    <link href="assert/stylesheet/manage_guide.css" rel="stylesheet">
+    <link href="assert/stylesheet/guide_view.css" rel="stylesheet">
     <link href="assert/stylesheet/guide_form.css" rel="stylesheet">
     <link href="assert/stylesheet/vehicle_form.css" rel="stylesheet">
     <link href="assert/stylesheet/hotel_form.css" rel="stylesheet">
@@ -369,7 +369,8 @@
                     <div class="col-md-4"></div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3">
-                            <input class="form-control form-control" name="avatar-file" style="padding-left: 17px;padding-right: 17px;"
+                            <input class="form-control form-control" name="avatar-file"
+                                   style="padding-left: 17px;padding-right: 17px;"
                                    type="file"/></div>
                     </div>
                     <div class="col-sm-12 col-md-4"></div>
@@ -414,8 +415,12 @@
                         <input autocomplete="off" class="form-control" name="password" required type="password"/>
                     </div>
                     <div class="col-md-12 content-right" style="margin-top: 47px;">
-                        <button class="btn btn-primary form-btn" type="submit" style="background-color: #0d6efd">Add Hotel</button>
-                        <button class="btn btn-primary form-btn" type="submit" style="background-color: #146c43">Update</button>
+                        <button class="btn btn-primary form-btn" style="background-color: #0d6efd" type="submit">Add
+                            Hotel
+                        </button>
+                        <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">
+                            Update
+                        </button>
                         <button class="btn btn-danger form-btn" type="reset">Delete</button>
                     </div>
                 </div>
@@ -426,44 +431,82 @@
 </div>
 
 <!--=====================================   guide view  ===================================-->
-<section id="guide_view">
-    <h1>Choose Your Guide! </h1>
-    <br>
 
-    <div class="guide_grid_container">
-        <div class="guide_grid_item">
-            <img class="img_guide" src="assert/image/travelImage2.jpg">
-            <label class="guide_img_label">Ruvini Rangathara</label><br>
-            <button class="btn_guide_view">View</button>
-        </div>
-        <div class="guide_grid_item">
-            <img class="img_guide" src="assert/image/travelImage2.jpg">
-            <label class="guide_img_label">Ruvini Rangathara</label><br>
-            <button class="btn_guide_view">View</button>
-        </div>
-        <div class="guide_grid_item">
-            <img class="img_guide" src="assert/image/travelImage2.jpg">
-            <label class="guide_img_label">Ruvini Rangathara</label><br>
-            <button class="btn_guide_view">View</button>
-        </div>
-        <div class="guide_grid_item">
-            <img class="img_guide" src="assert/image/travelImage2.jpg">
-            <label class="guide_img_label">Ruvini Rangathara</label><br>
-            <button class="btn_guide_view">View</button>
-        </div>
-        <div class="guide_grid_item">
-            <img class="img_guide" src="assert/image/travelImage2.jpg">
-            <label class="guide_img_label">Ruvini Rangathara</label><br>
-            <button class="btn_guide_view">View</button>
-        </div>
-        <div class="guide_grid_item">
-            <img class="img_guide" src="assert/image/travelImage2.jpg">
-            <label class="guide_img_label">Ruvini Rangathara</label><br>
-            <button class="btn_guide_view">View</button>
+<div class="guide_container py-4 py-xl-5">
+    <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <h2>Select Your Guide!</h2>
+            <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc.
+                Vestibulum dui eget ultrices.</p>
         </div>
     </div>
-
-</section>
+    <div class="row gy-4 row-cols-1 row-cols-md-2">
+        <div class="col-md-6">
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-100">
+                    <img class="rounded img-fluid d-block w-100 fit-cover" src="assert/image/scroll1.jpeg"
+                         style="height: 200px;"/>
+                </div>
+                <div class="py-4 py-lg-0 px-lg-4">
+                    <h5>Guide ID : G0001</h5>
+                    <label class="form-label">Name : Ruvini Rangathara</label>
+                    <label class="form-label">Age : 23</label>
+                    <label class="form-label">Gender : Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                        style="height: 200px;"/></div>
+                <div class="py-4 py-lg-0 px-lg-4">
+                    <h5>Guide ID : G0001</h5><label class="form-label">Name : Ruvini Rangathara</label><label
+                        class="form-label">Age : 23</label><label class="form-label">Gender : Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                        style="height: 200px;"/></div>
+                <div class="py-4 py-lg-0 px-lg-4">
+                    <h5>Guide ID : G0001</h5><label class="form-label">Name : Ruvini Rangathara</label><label
+                        class="form-label">Age : 23</label><label class="form-label">Gender : Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                        style="height: 200px;"/></div>
+                <div class="py-4 py-lg-0 px-lg-4">
+                    <h5>Guide ID : G0001</h5><label class="form-label">Name : Ruvini Rangathara</label><label
+                        class="form-label">Age : 23</label><label class="form-label">Gender : Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                        style="height: 200px;"/></div>
+                <div class="py-4 py-lg-0 px-lg-4">
+                    <h5>Guide ID : G0001</h5><label class="form-label">Name : Ruvini Rangathara</label><label
+                        class="form-label">Age : 23</label><label class="form-label">Gender : Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                                        style="height: 200px;"/></div>
+                <div class="py-4 py-lg-0 px-lg-4">
+                    <h5>Guide ID : G0001</h5><label class="form-label">Name : Ruvini Rangathara</label><label
+                        class="form-label">Age : 23</label><label class="form-label">Gender : Female</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--========================================  vehicle view  =========================================-->
 <section>
@@ -472,87 +515,110 @@
             <div class="col-md-12">
                 <h1 style="margin-top: 25px;">Select Your Vehicles!</h1>
             </div>
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
                 <div class="bg-light border rounded shadow card">
-                    <img class="card-img-top" src="assert/image/vehicle1.png" />
+                    <img class="card-img-top" src="assert/image/vehicle1.png"/>
                     <div class="card-body">
                         <label class="form-label">Vehicle ID : V0001</label>
                         <label class="form-label">Vehicle Type : Van</label>
-                        <label class="form-label">Category : Luxury</label>
+                        <!--                        <label class="form-label">Category : Luxury</label>-->
                         <label class="form-label">Brand : KDH</label>
                         <label class="form-label">Seat Capacity : 12</label>
                         <label class="form-label"></label>
-                        <button class="btn btn-outline-success" type="button" style="font-weight: normal;font-family: Antic, sans-serif;">View More</button>
+                        <button class="btn btn-outline-success" style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
             </div>
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card"><img class="card-img-top" src="assert/image/vehicle1.png" />
+            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card"><img class="card-img-top"
+                                                                      src="assert/image/vehicle1.png"/>
                     <div class="card-body">
                         <label class="form-label">Vehicle ID : V0001</label>
                         <label class="form-label">Vehicle Type : Van</label>
-                        <label class="form-label">Category : Luxury</label>
+                        <!--                        <label class="form-label">Category : Luxury</label>-->
                         <label class="form-label">Brand : KDH</label>
                         <label class="form-label">Seat Capacity : 12</label>
                         <label class="form-label"></label>
-                        <button class="btn btn-outline-success" type="button" style="font-weight: normal;font-family: Antic, sans-serif;">View More  </button>
+                        <button class="btn btn-outline-success" style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More  
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
             </div>
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card"><img class="card-img-top" src="assert/image/vehicle1.png" />
+            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card"><img class="card-img-top"
+                                                                      src="assert/image/vehicle1.png"/>
                     <div class="card-body">
                         <label class="form-label">Vehicle ID : V0001</label>
                         <label class="form-label">Vehicle Type : Van</label>
-                        <label class="form-label">Category : Luxury</label>
+                        <!--                        <label class="form-label">Category : Luxury</label>-->
                         <label class="form-label">Brand : KDH</label>
                         <label class="form-label">Seat Capacity : 12</label>
                         <label class="form-label"></label>
-                        <button class="btn btn-outline-success" type="button" style="font-weight: normal;font-family: Antic, sans-serif;">View More  </button>
+                        <button class="btn btn-outline-success" style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More  
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
             </div>
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card"><img class="card-img-top" src="assert/image/vehicle1.png" />
+            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card"><img class="card-img-top"
+                                                                      src="assert/image/vehicle1.png"/>
                     <div class="card-body">
                         <label class="form-label">Vehicle ID : V0001</label>
                         <label class="form-label">Vehicle Type : Van</label>
-                        <label class="form-label">Category : Luxury</label>
+                        <!--                        <label class="form-label">Category : Luxury</label>-->
                         <label class="form-label">Brand : KDH</label>
                         <label class="form-label">Seat Capacity : 12</label>
                         <label class="form-label"></label>
-                        <button class="btn btn-outline-success" type="button" style="font-weight: normal;font-family: Antic, sans-serif;">View More  </button>
+                        <button class="btn btn-outline-success" style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More  
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
             </div>
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card"><img class="card-img-top" src="assert/image/vehicle1.png" />
+            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card"><img class="card-img-top"
+                                                                      src="assert/image/vehicle1.png"/>
                     <div class="card-body">
                         <label class="form-label">Vehicle ID : V0001</label>
                         <label class="form-label">Vehicle Type : Van</label>
-                        <label class="form-label">Category : Luxury</label>
+                        <!--                        <label class="form-label">Category : Luxury</label>-->
                         <label class="form-label">Brand : KDH</label>
                         <label class="form-label">Seat Capacity : 12</label>
                         <label class="form-label"></label>
-                        <button class="btn btn-outline-success" type="button" style="font-weight: normal;font-family: Antic, sans-serif;">View More  </button>
+                        <button class="btn btn-outline-success" style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More  
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
             </div>
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card"><img class="card-img-top" src="assert/image/vehicle1.png" />
-                    <div class="card-body" >
+            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card"><img class="card-img-top"
+                                                                      src="assert/image/vehicle1.png"/>
+                    <div class="card-body">
                         <label class="form-label">Vehicle ID : V0001</label>
                         <label class="form-label">Vehicle Type : Van</label>
-                        <label class="form-label">Category : Luxury</label>
+                        <!--                        <label class="form-label">Category : Luxury</label>-->
                         <label class="form-label">Brand : KDH</label>
                         <label class="form-label">Seat Capacity : 12</label>
                         <label class="form-label"></label>
-                        <button class="btn btn-outline-success" type="button" style="font-weight: normal;font-family: Antic, sans-serif;">View More  </button>
+                        <button class="btn btn-outline-success" style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More  
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
@@ -580,7 +646,8 @@
                      style="padding-right: 99px;margin-left: -4px;padding-left: 0px;margin-right: 101px;">
                     <div class="avatar-bg center"
                          style="margin-left: 36px;padding-right: 0px;padding-left: 0px;margin-right: 32px;"></div>
-                    <input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-right: 10px;padding-left: 13px;margin-left: 17px;"
+                    <input class="form-control form-control" name="avatar-file"
+                           style="width: 146px;padding-right: 314px;margin-right: 10px;padding-left: 13px;margin-left: 17px;"
                            type="file"/>
                 </div>
             </div>
@@ -599,7 +666,8 @@
                                                                                                 required type="email"/>
                 </div>
                 <div class="row">
-                    <div class="col"><label class="form-label">Age </label><input autocomplete="off" class="form-control"
+                    <div class="col"><label class="form-label">Age </label><input autocomplete="off"
+                                                                                  class="form-control"
                                                                                   name="password" required
                                                                                   type="password"/></div>
                     <div class="col-md-2"><label class="form-label"
@@ -610,9 +678,10 @@
                                 class="form-check-label" for="formCheck-2">Male</label></div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-check" style="padding-bottom: 0px;margin-top: 39px;"><input class="form-check-input"
-                                                                                                     id="formCheck-1"
-                                                                                                     type="radio"/><label
+                        <div class="form-check" style="padding-bottom: 0px;margin-top: 39px;"><input
+                                class="form-check-input"
+                                id="formCheck-1"
+                                type="radio"/><label
                                 class="form-check-label" for="formCheck-1">Female</label></div>
                     </div>
                 </div>
@@ -624,20 +693,24 @@
                         <div class="form-group mb-3"><label class="form-label">Man Day Value</label><input
                                 class="form-control" name="firstname" type="text"/></div>
                         <label class="form-label" style="padding-bottom: 0px;padding-top: 24px;">NIC Front Image</label><input
-                            class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
+                            class="form-control form-control" name="avatar-file"
+                            style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
                             type="file"/><label
                             class="form-label" style="padding-bottom: 0px;margin-bottom: 10px;padding-top: 17px;">NIC
-                        Back Image</label><input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
+                        Back Image</label><input class="form-control form-control" name="avatar-file"
+                                                 style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
                                                  type="file"/>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3"><label class="form-label">Experience</label><input
                                 class="form-control" name="firstname" type="text"/></div>
                         <label class="form-label" style="padding-top: 24px;">Guide ID Front Image</label><input
-                            class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
+                            class="form-control form-control" name="avatar-file"
+                            style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
                             type="file"/><label
                             class="form-label" style="padding-bottom: 0px;margin-bottom: 10px;padding-top: 17px;">Guide
-                        ID Back Image</label><input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
+                        ID Back Image</label><input class="form-control form-control" name="avatar-file"
+                                                    style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
                                                     type="file"/>
                     </div>
                     <div class="col"><label class="form-label" style="padding-top: 24px;">Remark</label><input
@@ -672,28 +745,33 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
                         <div style=" background-image:url('assert/image/hotel1.jpeg'); margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;width: 250px;height: 150px;padding-left: 0px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style="margin-top: 10px; margin-right: 17px;padding-left: 7px; padding-right: 0px;font-size: 15px; width: 250px"
+                        <input class="form-control form-control" name="avatar-file"
+                               style="margin-top: 10px; margin-right: 17px;padding-left: 7px; padding-right: 0px;font-size: 15px; width: 250px"
                                type="file"/>
                     </div>
                     <div class="col-md-4">
                         <div style=" background-image:url('assert/image/hotel1.jpeg'); margin-right: 2px;margin-bottom: -2px;width: 250px;height: 150px;padding-bottom: 0px;padding-left: 0px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style="margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
+                        <input class="form-control form-control" name="avatar-file"
+                               style="margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
                                type="file"/>
                     </div>
                     <div class="col-md-4">
                         <div style=" background-image:url('assert/image/hotel1.jpeg'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style=" margin-top: 10px; margin-right: 17px;margin-left: 7px;padding-right: 0px;padding-left: 0px;font-size: 15px; width: 250px"
+                        <input class="form-control form-control" name="avatar-file"
+                               style=" margin-top: 10px; margin-right: 17px;margin-left: 7px;padding-right: 0px;padding-left: 0px;font-size: 15px; width: 250px"
                                type="file"/>
                     </div>
                     <div class="col"></div>
                     <div class="col-md-4">
                         <div style=" background-image:url('assert/image/hotel1.jpeg'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;margin-top: 18px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style=" margin-top: 10px;margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
+                        <input class="form-control form-control" name="avatar-file"
+                               style=" margin-top: 10px;margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
                                type="file"/>
                     </div>
                     <div class="col-md-4">
                         <div style=" background-image:url('assert/image/hotel1.jpeg'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;margin-top: 18px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style=" margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
+                        <input class="form-control form-control" name="avatar-file"
+                               style=" margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
                                type="file"/>
                     </div>
                     <div class="col"></div>
@@ -702,7 +780,8 @@
                     <div class="col-sm-12 col-md-7">
                         <div class="form-group mb-3"><label class="form-label"
                                                             style="margin-top: 7px;padding-top: 27px;">Vehicle
-                            ID</label><input class="form-control" name="firstname" style="padding-right: 300px;margin-left: 2px;padding-left: 7px;margin-right: -297px;"
+                            ID</label><input class="form-control" name="firstname"
+                                             style="padding-right: 300px;margin-left: 2px;padding-left: 7px;margin-right: -297px;"
                                              type="text"/>
                         </div>
                     </div>
@@ -746,14 +825,16 @@
                     </div>
                 </div>
                 <label class="form-label" style="margin-top: 16px;">Remark</label><input autocomplete="off"
-                                                                                         class="form-control" name="email"
+                                                                                         class="form-control"
+                                                                                         name="email"
                                                                                          required type="email"/>
                 <h1 style="margin-top: 41px;">Driver Details</h1>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3"><label class="form-label"
                                                             style="padding-top: 0px;margin-top: 7px;">Driver
-                            ID</label><input class="form-control" name="firstname" style="padding-right: 300px;margin-left: 2px;padding-left: 7px;margin-right: -297px;"
+                            ID</label><input class="form-control" name="firstname"
+                                             style="padding-right: 300px;margin-left: 2px;padding-left: 7px;margin-right: -297px;"
                                              type="text"/>
                         </div>
                     </div>
@@ -761,7 +842,8 @@
                 <label class="form-label" style="margin-top: 14px;">Driver Name</label><input autocomplete="off"
                                                                                               class="form-control"
                                                                                               name="email"
-                                                                                              required style="padding-right: 361px;margin-right: -351px;"
+                                                                                              required
+                                                                                              style="padding-right: 361px;margin-right: -351px;"
                                                                                               type="email"/><label
                     class="form-label" style="margin-top: 19px;">Contact No</label><input autocomplete="off"
                                                                                           class="form-control"
@@ -770,11 +852,13 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6"><label class="form-label"
                                                            style="padding-bottom: 0px;padding-top: 24px;">License Front
-                        Image</label><input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
+                        Image</label><input class="form-control form-control" name="avatar-file"
+                                            style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
                                             type="file"/>
                     </div>
                     <div class="col-sm-12 col-md-6"><label class="form-label" style="padding-top: 24px;">License Back
-                        Image</label><input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;margin-bottom: 22px;"
+                        Image</label><input class="form-control form-control" name="avatar-file"
+                                            style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;margin-bottom: 22px;"
                                             type="file"/>
                     </div>
                 </div>

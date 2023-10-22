@@ -1,0 +1,23 @@
+.fit-cover {
+    object-fit: cover;
+}
+
+.guide_container{
+    color: black;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.guide_container img{
+    width: 35%;
+    /*height: 150px;*/
+}
+
+.guide_container .py-4{
+    display: flex;
+    flex-direction: column;
+
+}
+.w-100{
+    width: 30%;
+}
