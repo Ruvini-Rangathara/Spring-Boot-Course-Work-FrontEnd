@@ -1,0 +1,21 @@
+
+.vehicle_container .bg-light {
+    width: 250px;
+}
+
+.vehicle_container{
+    padding-right: 200px;
+    padding-left: 230px;
+}
+
+.vehicle_container label{
+    margin: 0;
+}
+
+.vehicle_container .card-body{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
