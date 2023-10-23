@@ -1011,7 +1011,7 @@
 <br>
 <!--==================================  manage guide form   ===========================-->
 
-<div class="container profile profile-view" id="profile">
+<div class="manage_guide_container profile profile-view" id="guide_profile">
     <div class="row">
         <div class="col-md-12 alert-col relative">
             <div class="alert alert-info absolue center" role="alert">
@@ -1028,7 +1028,7 @@
                          style="margin-left: 36px;padding-right: 0px;padding-left: 0px;margin-right: 32px;"></div>
                     <input class="form-control form-control" name="avatar-file"
                            style="width: 146px;padding-right: 314px;margin-right: 10px;
-                           padding-left: 13px;margin-left: 17px;" type="file"/>
+                           padding-left: 13px;margin-left: 17px;" type="file" id="manage_guide_image_file"/>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1036,70 +1036,70 @@
                 <hr/>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Guide ID</label><input
-                                class="form-control" name="firstname" type="text"/></div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Guide ID</label>
+                            <input class="form-control" name="firstname" type="text" id="manage_guide_id"/>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group mb-3"><label class="form-label">Guide Name</label><input autocomplete="off"
-                                                                                                class="form-control"
-                                                                                                name="email"
-                                                                                                required type="email"/>
+                <div class="form-group mb-3">
+                    <label class="form-label">Guide Name</label>
+                    <input autocomplete="off" class="form-control" name="name" required type="text" id="manage_guide_name"/>
                 </div>
                 <div class="row">
-                    <div class="col"><label class="form-label">Age </label><input autocomplete="off"
-                                                                                  class="form-control"
-                                                                                  name="password" required
-                                                                                  type="password"/></div>
-                    <div class="col-md-2"><label class="form-label"
-                                                 style="margin-right: 35px;padding-left: 0px;padding-top: 2px;margin-top: 5px;padding-right: 0px;margin-left: 35px;">Gender </label>
-                        <div class="form-check" style="margin-left: 33px;"><input class="form-check-input"
-                                                                                  id="formCheck-2"
-                                                                                  type="radio"/><label
-                                class="form-check-label" for="formCheck-2">Male</label></div>
+                    <div class="col">
+                        <label class="form-label">Age </label>
+                        <input autocomplete="off" class="form-control" name="age" required type="text" id="manage_guide_age"/>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label" style="margin-right: 35px;padding-left: 0px;padding-top: 2px;margin-top: 5px;padding-right: 0px;margin-left: 35px;">Gender </label>
+                        <div class="form-check" style="margin-left: 33px;">
+                            <input class="form-check-input" id="manage_guide_radio_male" type="radio"/>
+                            <label class="form-check-label" for="manage_guide_radio_male">Male</label>
+                        </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-check" style="padding-bottom: 0px;margin-top: 39px;"><input
-                                class="form-check-input"
-                                id="formCheck-1"
-                                type="radio"/><label
-                                class="form-check-label" for="formCheck-1">Female</label></div>
+                        <div class="form-check" style="padding-bottom: 0px;margin-top: 39px;">
+                            <input class="form-check-input" id="manage_guide_radio_female" type="radio"/>
+                            <label class="form-check-label" for="manage_guide_radio_female">Female</label>
+                        </div>
                     </div>
                 </div>
-                <label class="form-label">Address</label><input autocomplete="off" class="form-control" name="email"
-                                                                required type="email"/><label class="form-label">Contact
-                No</label><input autocomplete="off" class="form-control" name="email" required type="email"/>
+                <label class="form-label">Address</label>
+                <input autocomplete="off" class="form-control" name="address" required type="text" id="manage_guide_address"/>
+                <label class="form-label">Contact No</label>
+                <input autocomplete="off" class="form-control" name="contact" required type="text" id="manage_guide_contact"/>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Man Day Value</label><input
-                                class="form-control" name="firstname" type="text"/></div>
-                        <label class="form-label" style="padding-bottom: 0px;padding-top: 24px;">NIC Front Image</label><input
-                            class="form-control form-control" name="avatar-file"
-                            style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
-                            type="file"/><label
-                            class="form-label" style="padding-bottom: 0px;margin-bottom: 10px;padding-top: 17px;">NIC
-                        Back Image</label><input class="form-control form-control" name="avatar-file"
-                                                 style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
-                                                 type="file"/>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Man Day Value</label>
+                            <input class="form-control" name="firstname" type="text" id="manage_guide_man_day_value"/>
+                        </div>
+                        <label class="form-label" style="padding-bottom: 0px;padding-top: 24px;">NIC Front Image</label>
+                        <input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;" type="file" id="manage_guide_nic_front_file"/>
+                        <label class="form-label" style="padding-bottom: 0px;margin-bottom: 10px;padding-top: 17px;">NIC Back Image</label>
+                        <input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;" type="file" id="manage_guide_nic_back_file"/>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group mb-3"><label class="form-label">Experience</label><input
-                                class="form-control" name="firstname" type="text"/></div>
-                        <label class="form-label" style="padding-top: 24px;">Guide ID Front Image</label><input
-                            class="form-control form-control" name="avatar-file"
-                            style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
-                            type="file"/><label
-                            class="form-label" style="padding-bottom: 0px;margin-bottom: 10px;padding-top: 17px;">Guide
-                        ID Back Image</label><input class="form-control form-control" name="avatar-file"
-                                                    style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;"
-                                                    type="file"/>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Experience</label>
+                            <input class="form-control" name="firstname" type="text"/>
+                        </div>
+                        <label class="form-label" style="padding-top: 24px;">Guide ID Front Image</label>
+                        <input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;" type="file" id="manage_guide_id_front_file"/>
+                        <label class="form-label" style="padding-bottom: 0px;margin-bottom: 10px;padding-top: 17px;">Guide ID Back Image</label>
+                        <input class="form-control form-control" name="avatar-file" style="width: 146px;padding-right: 314px;margin-left: 0px;margin-right: 10px;padding-left: 13px;" type="file" id="manage_guide_id_back_file"/>
                     </div>
-                    <div class="col"><label class="form-label" style="padding-top: 24px;">Remark</label><input
-                            class="form-control" name="firstname" style="margin-bottom: 25px;" type="text"/></div>
+                    <div class="col">
+                        <label class="form-label" style="padding-top: 24px;">Remark</label>
+                        <input class="form-control" name="firstname" style="margin-bottom: 25px;" type="text" id="manage_guide_remark"/>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 content-right" style="padding-bottom: 0px;">
-                        <button class="btn btn-primary form-btn" type="submit">SAVE</button>
-                        <button class="btn btn-danger form-btn" type="reset">CANCEL</button>
+                        <button class="btn btn-primary form-btn" style="background-color: #0d6efd" type="submit" id="guide_manage_btn_add">Add Guide</button>
+                        <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit" id="guide_manage_btn_update">Update</button>
+                        <button class="btn btn-danger form-btn" type="submit" id="guide_manage_btn_delete">Delete</button>
                         <hr/>
                     </div>
                 </div>
