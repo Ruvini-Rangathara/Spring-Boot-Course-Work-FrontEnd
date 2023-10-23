@@ -1,0 +1,11 @@
+#package_profile{
+    color: black;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#package_head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
