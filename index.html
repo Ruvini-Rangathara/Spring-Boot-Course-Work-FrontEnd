@@ -1069,24 +1069,24 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
                         <div id="vehicle_manage_image1" style=" background-image:url('assert/image/vehicle1.png'); margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;width: 250px;height: 150px;padding-left: 0px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style="margin-top: 10px; margin-right: 17px;padding-left: 7px; padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file1"/>
+                        <input class="form-control form-control vehicle_manage_image_file" name="avatar-file" style="margin-top: 10px; margin-right: 17px;padding-left: 7px; padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file1"/>
                     </div>
                     <div class="col-md-4">
                         <div id="vehicle_manage_image2" style=" background-image:url('assert/image/vehicle1.png'); margin-right: 2px;margin-bottom: -2px;width: 250px;height: 150px;padding-bottom: 0px;padding-left: 0px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style="margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file2"/>
+                        <input class="form-control form-control vehicle_manage_image_file" name="avatar-file" style="margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file2"/>
                     </div>
                     <div class="col-md-4">
                         <div id="vehicle_manage_image3" style=" background-image:url('assert/image/vehicle1.png'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style=" margin-top: 10px; margin-right: 17px;margin-left: 7px;padding-right: 0px;padding-left: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file3"/>
+                        <input class="form-control form-control vehicle_manage_image_file" name="avatar-file" style=" margin-top: 10px; margin-right: 17px;margin-left: 7px;padding-right: 0px;padding-left: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file3"/>
                     </div>
                     <div class="col"></div>
                     <div class="col-md-4">
                         <div  id="vehicle_manage_image4" style=" background-image:url('assert/image/vehicle1.png'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;margin-top: 18px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style=" margin-top: 10px;margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file4"/>
+                        <input class="form-control form-control vehicle_manage_image_file" name="avatar-file" style=" margin-top: 10px;margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file4"/>
                     </div>
                     <div class="col-md-4">
                         <div  id="vehicle_manage_image5" style=" background-image:url('assert/image/vehicle1.png'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;margin-top: 18px;"></div>
-                        <input class="form-control form-control" name="avatar-file" style=" margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file5"/>
+                        <input class="form-control form-control vehicle_manage_image_file" name="avatar-file" style=" margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px" type="file" id="vehicle_manage_image_file5"/>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -1102,7 +1102,7 @@
                     <label class="form-label" style="padding-bottom: 0px;padding-top: 0px;margin-top: 7px;">Vehicle Type</label>
                     <input autocomplete="off" class="form-control" name="type" required type="text" id="manage_vehicle_type"/>
                     <label class="form-label" style="margin-top: 19px;padding-bottom: 0px;padding-top: 0px;">Brand</label>
-                    <input autocomplete="off" class="form-control" name="brand" required type="brand" id="manage_vehicle_brand"/>
+                    <input autocomplete="off" class="form-control" name="brand" required type="text" id="manage_vehicle_brand"/>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -1117,28 +1117,49 @@
                         <label class="form-label">Fuel Usage</label>
                         <input autocomplete="off" class="form-control" name="text" required type="text" id="manage_vehicle_fuel_usage"/>
                     </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label" style="margin-bottom: -1px;padding-top: 0px;margin-top: 35px;">Transmission Type</label>
+                        <div class="form-check"><input class="form-check-input" id="manage_vehicle_radio_auto" name="manage_transmission_type" type="radio"/>
+                            <label class="form-check-label" for="manage_vehicle_radio_auto">Auto</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="manage_vehicle_radio_manual" name="manage_transmission_type" type="radio"/>
+                            <label class="form-check-label" for="manage_vehicle_radio_manual">Manual</label>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                          <label class="form-label" style="margin-bottom: -1px;padding-top: 0px;margin-top: 35px;">Hybrid Or Non Hybrid</label>
-                        <div class="form-check"><input class="form-check-input" id="manage_vehicle_radio_hybrid" type="radio"/>
+                        <div class="form-check"><input class="form-check-input" id="manage_vehicle_radio_hybrid" name="manage_hybrid_or_non_hybrid" type="radio"/>
                             <label class="form-check-label" for="manage_vehicle_radio_hybrid">Hybrid</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" id="manage_vehicle_radio_non_hybrid" type="radio"/>
+                            <input class="form-check-input" id="manage_vehicle_radio_non_hybrid" name="manage_hybrid_or_non_hybrid" type="radio"/>
                             <label class="form-check-label" for="manage_vehicle_radio_non_hybrid">Non Hybrid</label>
                         </div>
                     </div>
-                    <div class="col-md-6"><label class="form-label" style="margin-top: 32px;">Availability</label>
+
+                    <div class="col-md-6"><label class="form-label" style="margin-top: 27px;">Availability</label>
                         <div class="form-check">
-                            <input class="form-check-input" id="manage_vehicle_radio_available" type="radio"/>
+                            <input class="form-check-input" id="manage_vehicle_radio_available" name="manage_vehicle_availability" type="radio"/>
                             <label class="form-check-label" for="manage_vehicle_radio_available">Available</label>
                         </div>
-                        <div class="form-check"><input class="form-check-input" id="manage_vehicle_radio_non_available" type="radio"/>
-                            <label class="form-check-label" for="manage_vehicle_radio_non_available">UnAvailable</label>
+                        <div class="form-check"><input class="form-check-input" id="manage_vehicle_radio_non_available" name="manage_vehicle_availability" type="radio"/>
+                            <label class="form-check-label" for="manage_vehicle_radio_non_available">Unavailable</label>
                         </div>
                     </div>
                 </div>
-                <label class="form-label" style="margin-top: 16px;">Remark</label>
-                <input autocomplete="off" class="form-control" name="remark" required type="text"/>
+
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group mb-3" style="margin-left: -14px">
+                        <label class="form-label" style="padding-top: 0px;margin-top: 20px;" >Price Per Day</label>
+                        <input class="form-control" name="price" style="padding-right: 300px;margin-left: 2px;padding-left: 7px;margin-right: -297px;" type="text" id="manage_vehicle_price_per_day"/>
+                    </div>
+                </div>
+
+                <label class="form-label" style="margin-top: 14px;">Remark</label>
+                <input autocomplete="off" class="form-control" name="remark" required type="text" id="vehicle_remark"/>
                 <h1 style="margin-top: 41px;">Driver Details</h1>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
@@ -1326,8 +1347,19 @@
 
 <!--==============================   JS Files   ============================-->
 <script src="controller/nav_bar.js"></script>
+
+
 <script src="controller/welcome_page.js"></script>
-<script src="controller/guide_controller.js"></script>
+<script src="controller/login.js"></script>
+<script src="controller/nav_bar.js"></script>
+<script src="controller/signup.js"></script>
+
+<script src="controller/guide_manage_controller.js"></script>
+<script src="controller/guide_view_controller.js"></script>
+<script src="controller/hotel_manage_controller.js"></script>
+<script src="controller/hotel_view_controller.js"></script>
+<script src="controller/vehicle_manage_controller.js"></script>
+<script src="controller/vehicle_view_controller.js"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
