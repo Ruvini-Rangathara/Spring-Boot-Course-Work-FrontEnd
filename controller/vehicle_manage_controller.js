@@ -1,5 +1,7 @@
-import {getLastDriverId} from "../model/driver_model.js";
-import {getAll, getLastVehicleId} from "../model/vehicle_model.js";
+import {getLastOnGoingDriverId, saveDriver} from "../model/driver_model.js";
+import {
+    getAllVehicles, updateVehicle, getLastOnGoingVehicleId, saveVehicle, deleteVehicle, getVehicle, existsByVehiclesId
+} from "../model/vehicle_model.js";
 
 const vehicle_id_regex = /^V\d{3,}$/;
 const vehicle_brand_regex = /^[A-Za-z0-9\\s-]+$/;
@@ -9,41 +11,72 @@ const name_pattern = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
 const vehicle_price_per_day_regex = /^\d+(\.\d{2})?$/;
 const contact_number = /^\d{10}$/;
 
+function clearManageVehicleForm() {
+    $('#vehicle_search_input').val("");
+    $('#manage_vehicle_id').val("");
+    $('#manage_vehicle_brand').val("");
+    $('#manage_vehicle_category').val("");
+    $('#manage_vehicle_price_per_day').val("");
+    $('#manage_vehicle_fuel_type').val("");
+    $('#manage_vehicle_fuel_usage').val("");
+    $('#manage_vehicle_seat_capacity').val("");
+    $('#manage_vehicle_type').val("");
+    $('#vehicle_remark').val("");
+
+    $('#manage_vehicle_driver_id').val("");
+    $('#manage_vehicle_driver_name').val("");
+    $('#manage_vehicle_driver_contact_no').val("");
+
+    $('#manage_vehicle_radio_manual').prop('checked', false);
+    $('#manage_vehicle_radio_auto').prop('checked', false);
+    $('#manage_vehicle_radio_hybrid').prop('checked', false);
+    $('#manage_vehicle_radio_non_hybrid').prop('checked', false);
+    $('#manage_vehicle_radio_available').prop('checked', false);
+    $('#manage_vehicle_radio_non_available').prop('checked', false);
+}
+
 
 // get last vehicle id -------------------------------------------------------------
 function getLastVehicleId() {
-    let promise = getLastVehicleId();
+    let promise = getLastOnGoingVehicleId();
     promise.then((data) => {
+        console.log("vehicle id : " + data)
         $('#manage_vehicle_id').val(data);
     }).catch((e) => {
-        alert("Error occurred while getting vehicle details !");
+        alert("Error in getting vehicle details !");
     });
 }
+
 
 function getLastDriverId() {
-    let promise = getLastDriverId();
+    let promise = getLastOnGoingDriverId();
     promise.then((data) => {
+        console.log("driver id : " + data)
         $('#manage_vehicle_driver_id').val(data);
     }).catch((e) => {
-        alert("Error occurred while getting driver details !");
+        alert("Error in getting driver details !");
     });
 }
 
-$(document).ready(() => {
+$('#manage_vehicle_btn_new').on('click', (e) => {
+    e.preventDefault()
+    clearManageVehicleForm();
     getLastVehicleId();
     getLastDriverId();
 })
+
+
 // -----------------------------------------------------------------------------------------
 // save vehicle & driver -------------------------------------------------------------------
 function checkImages() {
-    let fileInputs = document.querySelectorAll('.vehicle_manage_image_file');
-// Check if all five file inputs are used (have a selected file)
-    for (let i = 0; i < fileInputs.length; i++) {
-        if (fileInputs[i].files.length === 0) {
-            return false; // At least one file input has no selected file
-        }
-    }
-    return true; // All file inputs have selected files
+//     let fileInputs = document.querySelectorAll('.vehicle_manage_image_file');
+// // Check if all five file inputs are used (have a selected file)
+//     for (let i = 0; i < fileInputs.length; i++) {
+//         if (fileInputs[i].files.length === 0) {
+//             return false; // At least one file input has no selected file
+//         }
+//     }
+//     return true; // All file inputs have selected files
 }
 
 function validateVehicleDetails() {
@@ -103,11 +136,11 @@ function validateDriverDetails() {
     if (driver_id_regex.test($('#manage_vehicle_driver_id').val())) {
         if (name_pattern.test(($('#manage_vehicle_driver_name').val()))) {
             if (contact_number.test($('#manage_vehicle_driver_contact_no').val())) {
-                if (document.getElementById('manage_vehicle_driver_license_front_file').files.length !== 0 && document.getElementById('manage_vehicle_driver_license_back_file').files.length !== 0) {
-                    return true;
-                } else {
-                    alert("select driver license ! ")
-                }
+                // if (document.getElementById('manage_vehicle_driver_license_front_file').files.length !== 0 && document.getElementById('manage_vehicle_driver_license_back_file').files.length !== 0) {
+                return true;
+                // } else {
+                //     alert("select driver license ! ")
+                // }
             } else {
                 alert("invalid driver contact number ! ")
             }
@@ -123,51 +156,50 @@ function validateDriverDetails() {
 // ------------------------------------------------------------------------------------------------------------------
 $('#manage_vehicle_btn_save').on('click', (e) => {
     e.preventDefault()
-
-    if (validateVehicleDetails()) {
-        if (validateDriverDetails()) {
-            let driver = {
-                driverId: $('#manage_vehicle_driver_id').val(),
-                name: $('#manage_vehicle_driver_name').val(),
-                contactNo: $('#manage_vehicle_driver_contact_no').val()
-            }
-            let isSaved = saveDriver(driver);
-            isSaved.then((resolve) => {
-                let vehicle = {
-                    vehicleId: $('#vehicle_id').val(),
-                    brand: $('#vehicle_brand').val(),
-                    category: $('#category').val(),
-                    fuelType: $('#fuel_type').val(),
-                    hybridOrNon: $("input[name='manage_hybrid_or_non_hybrid']:checked").val(),
-                    fuelUsage: $('#fuel_usage').val(),
-                    seatCapacity: $("#seat_capacity").val(),
-                    vehicleType: $("#vehicle_type").val(),
-                    transmissionType: $("input[name='manage_transmission_type']:checked").val(),
-                    availability: $("input[name='manage_vehicle_availability']:checked").val(),
-                    pricePerDay: $('#manage_vehicle_price_per_day').val(),
-                    remark: $('#vehicle_remark').val(),
-                }
-                saveVehicle(vehicle).then((resolve) => {
-                    alert(resolve)
-                    alert("Vehicle details saved successfully !");
-                }).catch((e) => {
-                    console.log(e.message)
-                    alert(e.message)
-                });
-            }).catch((e) => {
-                alert(e.message)
-            });
-        }
+    //
+    // if (validateVehicleDetails()) {
+    //     if (validateDriverDetails()) {
+    let driver = {
+        driverId: $('#manage_vehicle_driver_id').val(),
+        name: $('#manage_vehicle_driver_name').val(),
+        contactNo: $('#manage_vehicle_driver_contact_no').val()
     }
+    let isSaved = saveDriver(driver);
+    isSaved.then((resolve) => {
+        let vehicle = {
+            vehicleId: $('#manage_vehicle_id').val(),
+            brand: $('#manage_vehicle_brand').val(),
+            category: $('#manage_vehicle_category').val(),
+            fuelType: $('#manage_vehicle_fuel_type').val(),
+            hybridOrNon: getRadioButtonValueManageHybridOrNonHybrid(),
+            fuelUsage: $('#manage_vehicle_fuel_usage').val(),
+            seatCapacity: $("#manage_vehicle_seat_capacity").val(),
+            vehicleType: $("#manage_vehicle_type").val(),
+            transmissionType: getRadioButtonValueManageTransmissionType(),
+            availability: getRadioButtonValueManageVehicleAvailability(),
+            pricePerDay: $('#manage_vehicle_price_per_day').val(),
+            remark: $('#vehicle_remark').val(),
+        }
+        saveVehicle(vehicle).then((resolve) => {
+            swal("Good job!", "Vehicle details saved successfully !", "success");
+        }).catch((e) => {
+            console.log(e.message)
+            swal("Oops!", "Error in saving vehicle details !", "error");
+        });
+    }).catch((e) => {
+        alert(e.message)
+    });
+    //     }
+    // }
 })
 
 // -----------------------------------------------------------------------------------------
 // delete vehicle & driver -----------------------------------------------------------------
-$('#delete').on('click', (e) => {
+$('#manage_vehicle_btn_delete').on('click', (e) => {
     e.preventDefault()
-    let vehicle_id = $('#vehicle_id').val()
+    let vehicle_id = $('#manage_vehicle_id').val()
     if (vehicle_id_regex.test(vehicle_id)) {
-        let isDeleted = delete_vehicle(vehicle_id);
+        let isDeleted = deleteVehicle(vehicle_id);
         isDeleted.then((resolve) => {
             alert(resolve)
             // window.location.href = "index.html"; //redirect to home page
@@ -184,128 +216,54 @@ $('#delete').on('click', (e) => {
 // get all vehicles ------------------------------------------------------------------------
 function createVehicleCard(data) {
 
-    const elementHTML = ` <div class="grid-item flex align-content-center">
-            <div class="card">
-                <img alt="product-image" class="card-img" src="data:image/png;base64,${data.imageList[0]}">
-                <div class="flex-row img_collection space-between">
-                    <img class="vehicle_images1" src="data:image/png;base64,${data.imageList[1]}">
-                    <img class="vehicle_images2" src="data:image/png;base64,${data.imageList[2]}">
-                    <img class="vehicle_images3" src="data:image/png;base64,${data.imageList[3]}">
-                    <img class="vehicle_images4" src="data:image/png;base64,${data.imageList[4]}">
+    const elementHTML = `
+                    <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card">
+                    <img class="card-img-top" src="data:image/png;base64,${data.images[0]}">
+                    <div class="card-body">
+                        <label class="form-label">Vehicle ID : ${data.vehicleId}</label>
+                        <label class="form-label">Vehicle Type : ${data.vehicleType}</label>
+                        <label class="form-label">Brand : ${data.brand}</label>
+                        <label class="form-label">Seat Capacity : ${data.seatCapacity}</label>
+                        <button class="btn btn-outline-success"
+                                style="font-weight: normal;font-family: Antic, sans-serif;"
+                                type="button">View More</button>
+                    </div>
                 </div>
-                <div class="flex-row space-between w-full mb-sm">
-                    <p class="category">${data.id}</p>
-                </div>
-                <h1 class="product-name">${data.brand} </h1>
-                <div class="flex-row">
-                    <p class="price strike">per day value</p>
-                    <p class="price">Rs. ${data.fee_per_day}</p>
-                </div>
-                <div class="flex-row">
-                    <p class="price strike">per day km</p>
-                    <p class="price">Rs. ${data.fee_per_km}</p>
-                </div>
-                <div class="flex-row">
-                    <p class="price strike">Fuel type</p>
-                    <p class="price"><span>${data.fuel_type}</span></p>
-                </div>
-                <div class="flex-row">
-                    <p class="price strike">Seat capacity</p>
-                    <p class="price"><span>${data.seat_capacity}</span></p>
-                </div>
-                <!--            <div class="btn-col">-->
-                <!--                <a class="icon-link" href="#">View</a>-->
-                <!--            </div>-->
+                <div class="bg-light border rounded shadow card"></div>
             </div>
-        </div>`;
+    `;
 
     document.getElementsByClassName('vehicle_grid_container')[0].innerHTML += elementHTML;
 }
 
 $(document).ready(() => {
-    let promise = getAll();
-    promise.then((data) => {
-        // console.log("array size: "+data.length)
-        if (data.length > 0) {
-            data.forEach((ele) => {
-                createVehicleCard(ele)
-            });
-        } else alert("No vehicles found !")
-    }).catch((e) => {
-        // alert(e.message);
-    });
+    clearManageVehicleForm();
 })
 
 // -----------------------------------------------------------------------------------------
 // get vehicle & driver --------------------------------------------------------------------
 function setImages(dataImageList) {
-    let fileInputs = document.querySelectorAll('.vehicleImage');
+    let fileInputs = document.querySelectorAll('.vehicle_manage_img_div');
 
-    if (dataImageList.length >= fileInputs.length) {
-        dataImageList.slice(0, fileInputs.length).forEach((imageData, index) => {
-            // Create a Blob object from the image data
-            const blob = new Blob([imageData], {type: 'image/png'});
-
-            // Create a File object from the Blob
-            const file = new File([blob], 'image.png', {type: 'image/png'});
-
-            // Simulate setting the selected file in the file input
-            fileInputs[index].files = new FileList([file]);
-        });
-        return true; // All file inputs have selected files
-    } else {
-        return false; // Not enough images for all file inputs
-    }
+    // if (dataImageList.length >= fileInputs.length) {
+    //     dataImageList.slice(0, fileInputs.length).forEach((imageData, index) => {
+    //         // Create a Blob object from the image data
+    //         const blob = new Blob([imageData], {type: 'image/png'});
+    //
+    //         // Create a File object from the Blob
+    //         const file = new File([blob], 'image.png', {type: 'image/png'});
+    //
+    //         // Simulate setting the selected file in the file input
+    //         fileInputs[index].files = new FileList([file]);
+    //     });
+    //     return true; // All file inputs have selected files
+    // } else {
+    //     return false; // Not enough images for all file inputs
+    // }
 }
 
-$('#btn_search').on('click', (e) => {
-    e.preventDefault()
-    if (vehicle_id_regex.test($('#txt_search_vehicle').val())) {
-        get_vehicle($('#txt_search_vehicle').val()).then(data => {
-
-            // Set the vehicle data into form elements
-            $('#vehicle_id').val(data.id);
-            $('#vehicle_brand').val(data.brand);
-            $('#category').val(data.category);
-            $('#fee_per_day').val(data.fee_per_day);
-            $('#fee_per_km').val(data.fee_per_km);
-            $('#fuel_type').val(data.fuel_type);
-            $('#fuel_usage').val(data.fuel_usage);
-            $('input[name="radio-group-type"]').filter(`[value="${data.hybrid_or_non}"]`).prop('checked', true);
-            $('#seat_capacity').val(data.seat_capacity);
-            $(`#transmission_${data.transmission_type.toLowerCase()}`).prop('checked', true);
-            $('#vehicle_type').val(data.vehicle_type);
-            $(`input[name="vehicle-availability-group"][value="${data.availability}"]`).prop('checked', true);
-            for (let i = 0; i < data.imageList.length; i++) {
-                $(`#imagePreview${i + 1}`).attr('src', `data:image/png;base64,${data.imageList[i]}`);
-                // $(`#img${i + 1}`).attr('value', data.imageList[i]);
-            }
-
-            const driverData = data.driver;
-
-            // Set the driver data into the form elements
-            $('#driver_id').val(driverData.id);
-            $('#driver_name').val(driverData.name);
-            $('#driver_contact').val(driverData.contact_no);
-            $('#remark').val(driverData.remark);
-
-            // Set driver availability radio buttons
-            $(`input[name="driver-availability-group"][value="${driverData.availability}"]`).prop('checked', true);
-
-            // Set driver image previews
-            $('#imagePreview10').attr('src', `data:image/png;base64,${driverData.license_front}`);
-            $('#imagePreview11').attr('src', `data:image/png;base64,${driverData.license_back}`);
-
-            $('#save_vehicle_data').prop('disabled', true);
-            alert("Vehicle found !");
-        }).catch(e => {
-            alert("Error in getting vehicle details !");
-        })
-    } else {
-        alert("Invalid vehicle id !");
-        $('#save_vehicle_data').prop('disabled', false);
-    }
-});
 
 //------------------------------------------------------------------------------------------
 // update vehicle details ------------------------------------------------------------------
@@ -347,21 +305,118 @@ $('#update_btn').on('click', (e) => {
     }
 });
 
+function selectRadioButtonManageTransmissionType(transmissionType) {
+    if (transmissionType === 'Manual') {
+        $('#manage_vehicle_radio_manual').prop('checked', true);
+    } else if (transmissionType === 'Auto') {
+        $('#manage_vehicle_radio_auto').prop('checked', true);
+    }
+}
+
+function selectRadioButtonManageHybridOrNonHybrid(hybridOrNon) {
+    if (hybridOrNon === 'Hybrid') {
+        $('#manage_vehicle_radio_hybrid').prop('checked', true);
+    } else if (hybridOrNon === 'Non-Hybrid') {
+        $('#manage_vehicle_radio_non_hybrid').prop('checked', true);
+    }
+}
+
+function selectRadioButtonManageVehicleAvailability(availability) {
+    if (availability === 'Available') {
+        $('#manage_vehicle_radio_available').prop('checked', true);
+    } else if (availability === 'Unavailable') {
+        $('#manage_vehicle_radio_non_available').prop('checked', true);
+    }
+}
+
+function getRadioButtonValueManageTransmissionType() {
+    if ($('#manage_vehicle_radio_manual').is(":checked")) {
+        return 'Manual';
+    } else if ($('#manage_vehicle_radio_auto').is(":checked")) {
+        return 'Auto';
+    }
+}
+
+function getRadioButtonValueManageHybridOrNonHybrid() {
+    if ($('#manage_vehicle_radio_hybrid').is(":checked")) {
+        return 'Hybrid';
+    } else if ($('#manage_vehicle_radio_non_hybrid').is(":checked")) {
+        return 'Non-Hybrid';
+    }
+}
+
+function getRadioButtonValueManageVehicleAvailability() {
+    if ($('#manage_vehicle_radio_available').is(":checked")) {
+        return 'Available';
+    } else if ($('#manage_vehicle_radio_non_available').is(":checked")) {
+        return 'Unavailable';
+    }
+}
+
+$('#vehicle_search_button').on('click', (e) => {
+    e.preventDefault()
+
+    if (vehicle_id_regex.test($('#vehicle_search_input').val())) {
+        getVehicle($("#vehicle_search_input").val()).then(data => {
+
+            console.log("search")
+            // Set the vehicle data into form elements
+            $('#manage_vehicle_id').val(data.vehicleId);
+            $('#manage_vehicle_brand').val(data.brand);
+            $('#manage_vehicle_category').val(data.category);
+            $('#manage_vehicle_price_per_day').val(data.pricePerDay);
+
+            console.log(data.pricePerDay)
+
+            $('#manage_vehicle_fuel_type').val(data.fuelType);
+            $('#manage_vehicle_fuel_usage').val(data.fuelUsage);
+
+            selectRadioButtonManageTransmissionType(data.transmissionType);
+            selectRadioButtonManageHybridOrNonHybrid(data.hybridOrNon);
+            selectRadioButtonManageVehicleAvailability(data.availability);
+
+            $('#manage_vehicle_seat_capacity').val(data.seatCapacity);
+            $('#manage_vehicle_type').val(data.vehicleType);
+            $('#vehicle_remark').val(data.remark);
+
+
+            const driverData = data.driver;
+
+            // Set the driver data into the form elements
+            $('#manage_vehicle_driver_id').val(driverData.driverId);
+            $('#manage_vehicle_driver_name').val(driverData.name);
+            $('#manage_vehicle_driver_contact_no').val(driverData.contactNo);
+
+            // // Set driver image previews
+            // $('#manage_vehicle_driver_license_front_file').attr('src', `data:image/png;base64,${driverData.licenseFront}`);
+            // $('#manage_vehicle_driver_license_back_file').attr('src', `data:image/png;base64,${driverData.licenseBack}`);
+
+            // $('#manage_vehicle_btn_save').prop('disabled', true);
+            alert("Vehicle found !");
+        }).catch(e => {
+            console.log(e.message)
+            alert("Error in getting vehicle details !" + e);
+        })
+    } else {
+        alert("Invalid vehicle id !");
+        $('#manage_vehicle_btn_save').prop('disabled', false);
+    }
+})
 
 // ============================================================================================
 
 
-$('#manage_vehicle_btn_ok').on('click', (e) => {
+$('#manage_vehicle_btn_delete').on('click', (e) => {
     e.preventDefault()
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
 
-    let settings = {
-        "url": "http://localhost:9096/api/v1/vehicle/test", "method": "POST", "timeout": 0,
-    };
-    console.log("in test frontend")
-    $.ajax(settings).done(function (response, textStatus, jqXHR) {
-        resolve(response);
-    }).fail(function (jqXHR, textStatus, errorThrown) {
-        console.log(errorThrown)
-        reject(errorThrown);
-    });
+    })
 })

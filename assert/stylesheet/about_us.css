@@ -1,8 +1,8 @@
-#about_us_middle_div{
+#about_us_middle_div {
     width: 50px;
 }
 
-#about_us_section{
+#about_us_section {
     margin: 25px 150px 25px 150px;
     padding: 25px 50px 45px 50px;
     display: flex;
@@ -11,15 +11,15 @@
     border-radius: 20px;
 }
 
-#about_us_second_section{
+#about_us_second_section {
     display: flex;
 }
 
-#about_us_first_div, #about_us_third_div{
+#about_us_first_div, #about_us_third_div {
     width: 600px;
 }
 
-#about_us_image_section{
+#about_us_image_section {
     display: flex;
     width: 200px;
     height: fit-content;
@@ -28,7 +28,7 @@
 
 }
 
-#why_choose_us{
+#why_choose_us {
     margin: 50px 200px 50px 200px;
     padding: 25px 50px 45px 50px;
     border: 1px solid black;
@@ -36,17 +36,17 @@
     background-color: #e9ffdb;
 }
 
-#why_choose_us h3{
+#why_choose_us h3 {
     color: green;
 }
 
-#about_us_end_section{
+#about_us_end_section {
     margin: 50px;
     background-color: #d1d2d4;
     display: flex;
 }
 
-#about_us_end_second_div{
+#about_us_end_second_div {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -57,20 +57,22 @@
 }
 
 
-#about_us_end_div{
+#about_us_end_div {
     padding: 20px 30px 20px 30px;
     width: 100%;
     display: flex;
 }
 
-.about_us_end_img{
+.about_us_end_img {
     margin-right: 20px;
     width: 15vw;
     height: 120px;
     background-color: #0d6efd;
 }
 
-.about_us_end_img img{
+.about_us_end_img img {
     width: 100%;
     height: 120px;
 }
+
+

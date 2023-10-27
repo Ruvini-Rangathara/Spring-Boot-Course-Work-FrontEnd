@@ -15,7 +15,7 @@ export function saveVehicle(vehicle) {
 
         console.log($("#manage_vehicle_driver_id").val());
         let settings = {
-            "url": "http://localhost:9096/api/v1/vehicle",
+            "url": "http://localhost:9096/vehicle/api/v1/vehicle",
             "method": "POST",
             "timeout": 0,
             "processData": false,
@@ -32,11 +32,11 @@ export function saveVehicle(vehicle) {
     })
 }
 
-export function delete_vehicle(vehicle_id) {
+export function deleteVehicle(vehicle_id) {
     console.log(vehicle_id)
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:8087/api/v1/vehicle/delete",
+            "url": "http://localhost:9096/vehicle/api/v1/vehicle/delete",
             "method": "DELETE",
             "timeout": 0,
             "headers": {
@@ -52,10 +52,10 @@ export function delete_vehicle(vehicle_id) {
     })
 }
 
-export function get_vehicle(vehicle_id) {
+export function getVehicle(vehicle_id) {
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:8087/api/v1/vehicle/get",
+            "url": "http://localhost:9096/vehicle/api/v1/vehicle/get",
             "method": "GET",
             "timeout": 0,
             "headers": {
@@ -72,15 +72,14 @@ export function get_vehicle(vehicle_id) {
     })
 }
 
-export function getAll(){
+export function getAllVehicles(){
     return new Promise((resolve,reject)=>{
             let settings = {
-                "url": "http://localhost:8087/api/v1/vehicle/getAll",
+                "url": "http://localhost:9096/vehicle/api/v1/vehicle/getAll",
                 "method": "GET",
                 "timeout": 0,
             };
             $.ajax(settings).done(function (response, textStatus, jqXHR) {
-                console.log("success")
                 resolve(response);
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 console.log(errorThrown)
@@ -93,7 +92,7 @@ export function getAll(){
 export function getLastOnGoingVehicleId(){
     return new Promise((resolve,reject)=>{
             let settings = {
-                "url": "http://localhost:8087/api/v1/vehicle/get/lastId",
+                "url": "http://localhost:9096/vehicle/api/v1/vehicle/get/lastId",
                 "method": "GET",
                 "timeout": 0,
             };
@@ -107,10 +106,10 @@ export function getLastOnGoingVehicleId(){
     )
 }
 
-export function existsById(vehicle_id){
+export function existsByVehiclesId(vehicle_id){
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:8087/api/v1/vehicle/check/",
+            "url": "http://localhost:9096/vehicle/api/v1/vehicle/check/",
             "method": "GET",
             "timeout": 0,
             "headers": {
@@ -125,7 +124,7 @@ export function existsById(vehicle_id){
     })
 }
 
-export function update_vehicle(vehicle){
+export function updateVehicle(vehicle){
     return new Promise((resolve, reject) => {
         const vehicleBlob = new Blob([JSON.stringify(vehicle)], {type: 'application/json'});
         let form = new FormData();
@@ -139,7 +138,7 @@ export function update_vehicle(vehicle){
         form.append("driver_id",$('#driver_id').val(),);
         console.log($('#driver_id').val())
         let settings = {
-            "url": "http://localhost:8087/api/v1/vehicle/update",
+            "url": "http://localhost:9096/vehicle/api/v1/vehicle/update",
             "method": "PATCH",
             "timeout": 0,
             "processData": false,
@@ -156,3 +155,6 @@ export function update_vehicle(vehicle){
         });
     })
 }
+
+
+

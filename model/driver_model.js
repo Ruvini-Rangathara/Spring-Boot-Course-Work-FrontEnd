@@ -8,7 +8,7 @@ export function saveDriver(driver) {
         formData.append("licenseBack", $('#manage_vehicle_driver_license_back_file')[0].files[0]);
 
         let settings = {
-            "url": "http://localhost:9096/api/v1/driver/save",
+            "url": "http://localhost:9096/vehicle/api/v1/driver/save",
             "method": "POST",
             "timeout": 0,
             "processData": false,
@@ -30,7 +30,7 @@ export function saveDriver(driver) {
 export function getLastOnGoingDriverId() {
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:8087/api/v1/driver/get/lastId", "method": "GET", "timeout": 0,
+            "url": "http://localhost:9096/vehicle/api/v1/driver/get/lastId", "method": "GET", "timeout": 0,
         };
         $.ajax(settings).done(function (response, textStatus, jqXHR) {
             resolve(response);
@@ -51,7 +51,7 @@ export function update_driver(driver) {
         formData.append("license_front", $('#img11')[0].files[0]);
 
         let settings = {
-            "url": "http://localhost:8087/api/v1/driver/update",
+            "url": "http://localhost:9096/vehicle/api/v1/driver/update",
             "method": "PATCH",
             "timeout": 0,
             "processData": false,
