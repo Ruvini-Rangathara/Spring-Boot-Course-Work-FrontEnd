@@ -14,8 +14,9 @@ export function saveVehicle(vehicle) {
         form.append("driver_id",$('#manage_vehicle_driver_id').val(),);
 
         console.log($("#manage_vehicle_driver_id").val());
+
         let settings = {
-            "url": "http://localhost:9096/vehicle/api/v1/vehicle",
+            "url": "http://localhost:9096/vehicle/api/v1/vehicle/save",
             "method": "POST",
             "timeout": 0,
             "processData": false,
@@ -33,7 +34,7 @@ export function saveVehicle(vehicle) {
 }
 
 export function deleteVehicle(vehicle_id) {
-    console.log(vehicle_id)
+    console.log("deleted id in vehicle model : "+vehicle_id)
     return new Promise((resolve, reject) => {
         let settings = {
             "url": "http://localhost:9096/vehicle/api/v1/vehicle/delete",
@@ -130,16 +131,17 @@ export function updateVehicle(vehicle){
         let form = new FormData();
 
         form.append("vehicle", vehicleBlob);
-        form.append("vehicle_img1", $('#img1')[0].files[0],);
-        form.append("vehicle_img2", $('#img2')[0].files[0],);
-        form.append("vehicle_img3", $('#img3')[0].files[0],);
-        form.append("vehicle_img4", $('#img4')[0].files[0],);
-        form.append("vehicle_img5", $('#img5')[0].files[0],);
-        form.append("driver_id",$('#driver_id').val(),);
-        console.log($('#driver_id').val())
+        form.append("vehicle_img1", $('#vehicle_manage_image_file1')[0].files[0],);
+        form.append("vehicle_img2", $('#vehicle_manage_image_file2')[0].files[0],);
+        form.append("vehicle_img3", $('#vehicle_manage_image_file3')[0].files[0],);
+        form.append("vehicle_img4", $('#vehicle_manage_image_file4')[0].files[0],);
+        form.append("vehicle_img5", $('#vehicle_manage_image_file5')[0].files[0],);
+
+        form.append("driver_id",$('#manage_vehicle_driver_id').val(),);
+        console.log($("#manage_vehicle_driver_id").val())
         let settings = {
             "url": "http://localhost:9096/vehicle/api/v1/vehicle/update",
-            "method": "PATCH",
+            "method": "PUT",
             "timeout": 0,
             "processData": false,
             "mimeType": "multipart/form-data",

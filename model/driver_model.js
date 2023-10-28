@@ -41,18 +41,18 @@ export function getLastOnGoingDriverId() {
     })
 }
 
-export function update_driver(driver) {
+export function updateDriver(driver) {
     console.log("update driver " + JSON.stringify(driver));
     return new Promise((resolve, reject) => {
         const driverBlob = new Blob([JSON.stringify(driver)], {type: "application/json"});
         let formData = new FormData();
         formData.append("driver", driverBlob);
-        formData.append("license_back", $('#img10')[0].files[0]);
-        formData.append("license_front", $('#img11')[0].files[0]);
+        formData.append("licenseFront", $('#manage_vehicle_driver_license_front_file')[0].files[0]);
+        formData.append("licenseBack", $('#manage_vehicle_driver_license_back_file')[0].files[0]);
 
         let settings = {
             "url": "http://localhost:9096/vehicle/api/v1/driver/update",
-            "method": "PATCH",
+            "method": "PUT",
             "timeout": 0,
             "processData": false,
             "mimeType": "multipart/form-data",
