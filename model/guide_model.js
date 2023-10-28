@@ -124,7 +124,7 @@ export function getAllGuides (){
 }
 
 //----------------------------------------   get last guide id  ----------------------------------------
-export function getLastGuideId (){
+export function getNewGuideId (){
     return new Promise((resolve, reject) => {
         let settings = {
             "url": "http://localhost:9095/guide/api/v1/guide/get/lastId",

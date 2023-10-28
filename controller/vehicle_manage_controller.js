@@ -3,6 +3,8 @@ import {
     updateVehicle, getNewVehicleId, saveVehicle, deleteVehicle, getVehicle, existsByVehiclesId
 } from "../model/vehicle_model.js";
 
+
+//---------------------------------------  regex patterns for vehicle data  --------------------------------
 const vehicle_id_regex = /^V\d{3,}$/;
 const vehicle_brand_regex = /^[A-Za-z0-9\\s-]+$/;
 
@@ -11,6 +13,8 @@ const name_pattern = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
 const vehicle_price_per_day_regex = /^\d+(\.\d{2})?$/;
 const contact_number = /^\d{10}$/;
 
+
+//-----------------------------------------  clear vehicle form  -------------------------------------------
 function clearManageVehicleForm() {
     $('#vehicle_search_input').val("");
     $('#manage_vehicle_id').val("");
@@ -44,8 +48,7 @@ function clearManageVehicleForm() {
     $('#manage_vehicle_driver_license_back_file').val("");
 }
 
-
-// get last vehicle id -------------------------------------------------------------
+//------------------------------------ get new vehicle id --------------------------------------------------
 function getNewVehicleIdForTextField() {
     let promise = getNewVehicleId();
     promise.then((data) => {
@@ -56,7 +59,7 @@ function getNewVehicleIdForTextField() {
     });
 }
 
-
+//-------------------------------------  get new driver id  -----------------------------------------------
 function getNewDriverIdForTextField() {
     let promise = getNewDriverId();
     promise.then((data) => {
@@ -67,6 +70,7 @@ function getNewDriverIdForTextField() {
     });
 }
 
+//------------------------------------- new vehicle -------------------------------------------------------
 $('#manage_vehicle_btn_new').on('click', (e) => {
     e.preventDefault()
     clearManageVehicleForm();
@@ -75,8 +79,7 @@ $('#manage_vehicle_btn_new').on('click', (e) => {
 })
 
 
-// -----------------------------------------------------------------------------------------
-// save vehicle & driver -------------------------------------------------------------------
+//--------------------------------------  check images  ---------------------------------------------------
 function checkImages() {
     let fileInputs = document.querySelectorAll('.vehicle_manage_image_file');
     // Convert NodeList to an array for easier manipulation
@@ -91,6 +94,7 @@ function checkImages() {
 }
 
 
+//---------------------------------------  validate vehicle details  --------------------------------------
 function validateVehicleDetails() {
     if (vehicle_id_regex.test($('#manage_vehicle_id').val())) {
         if (vehicle_brand_regex.test($('#manage_vehicle_brand').val())) {
@@ -144,6 +148,7 @@ function validateVehicleDetails() {
     return false;
 }
 
+//---------------------------------------  validate driver details  --------------------------------------
 function validateDriverDetails() {
     if (driver_id_regex.test($('#manage_vehicle_driver_id').val())) {
         if (name_pattern.test(($('#manage_vehicle_driver_name').val()))) {
@@ -169,7 +174,7 @@ function validateDriverDetails() {
     return false;
 }
 
-// ------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------  save vehicle  --------------------------------------------
 $('#manage_vehicle_btn_save').on('click', (e) => {
     e.preventDefault()
 
@@ -230,9 +235,7 @@ $('#manage_vehicle_btn_save').on('click', (e) => {
     }
 })
 
-// -----------------------------------------------------------------------------------------
-// delete vehicle & driver -----------------------------------------------------------------
-// Assuming you have defined a variable vehicle_id_regex to validate vehicle_id
+// --------------------------------------  delete vehicle ------------------------------------------------
 $("#manage_vehicle_btn_delete").on('click', (e) => {
     e.preventDefault();
 
@@ -292,8 +295,7 @@ $("#manage_vehicle_btn_delete").on('click', (e) => {
 });
 
 
-//------------------------------------------------------------------------------------------
-// update vehicle details ------------------------------------------------------------------
+//------------------------------------  update vehicle  --------------------------------------------------
 $('#manage_vehicle_btn_update').on('click', (e) => {
     e.preventDefault()
     if (validateVehicleDetails()) {
@@ -361,7 +363,7 @@ $('#manage_vehicle_btn_update').on('click', (e) => {
 
 })
 
-
+//-----------------------  select Radio Button Manage TransmissionT ype  ---------------------------------
 function selectRadioButtonManageTransmissionType(transmissionType) {
     if (transmissionType === 'Manual') {
         $('#manage_vehicle_radio_manual').prop('checked', true);
@@ -370,6 +372,7 @@ function selectRadioButtonManageTransmissionType(transmissionType) {
     }
 }
 
+//----------------------  select Radio Button Manage Hybrid Or NonHybrid  --------------------------------
 function selectRadioButtonManageHybridOrNonHybrid(hybridOrNon) {
     if (hybridOrNon === 'Hybrid') {
         $('#manage_vehicle_radio_hybrid').prop('checked', true);
@@ -377,7 +380,8 @@ function selectRadioButtonManageHybridOrNonHybrid(hybridOrNon) {
         $('#manage_vehicle_radio_non_hybrid').prop('checked', true);
     }
 }
-
+selectRadioButtonManageVehicleAvailability
+//------------------------  select Radio Button Manage Vehicle Availability  -----------------------------
 function selectRadioButtonManageVehicleAvailability(availability) {
     if (availability === 'Available') {
         $('#manage_vehicle_radio_available').prop('checked', true);
@@ -386,6 +390,7 @@ function selectRadioButtonManageVehicleAvailability(availability) {
     }
 }
 
+//------------------------   get Radio Button Value Manage Transmission Type  -----------------------------
 function getRadioButtonValueManageTransmissionType() {
     if ($('#manage_vehicle_radio_manual').is(":checked")) {
         return 'Manual';
@@ -394,6 +399,7 @@ function getRadioButtonValueManageTransmissionType() {
     }
 }
 
+//--------------------------  get Radio Button Value Manage Hybrid Or NonHybrid  -------------------------
 function getRadioButtonValueManageHybridOrNonHybrid() {
     if ($('#manage_vehicle_radio_hybrid').is(":checked")) {
         return 'Hybrid';
@@ -402,6 +408,7 @@ function getRadioButtonValueManageHybridOrNonHybrid() {
     }
 }
 
+//-------------------------- get Radio Button Value Manage Vehicle Availability  -------------------------
 function getRadioButtonValueManageVehicleAvailability() {
     if ($('#manage_vehicle_radio_available').is(":checked")) {
         return 'Available';
@@ -410,6 +417,7 @@ function getRadioButtonValueManageVehicleAvailability() {
     }
 }
 
+//---------------------------------------  search vehicle  ------------------------------------------------
 $('#vehicle_search_button').on('click', (e) => {
     e.preventDefault()
 
@@ -459,12 +467,7 @@ $('#vehicle_search_button').on('click', (e) => {
 })
 
 
-$(document).ready(() => {
-    clearManageVehicleForm();
-})
-
-// -----------------------------------------------------------------------------------------
-// get vehicle & driver --------------------------------------------------------------------
+// ---------------------------------------  set images ----------------------------------------------------
 function setImages(dataImageList) {
 
     let imageList = dataImageList;
@@ -477,3 +480,7 @@ function setImages(dataImageList) {
 
 }
 
+//-------------------------------------------  initialize  ------------------------------------------------
+$(document).ready(() => {
+    clearManageVehicleForm();
+})
