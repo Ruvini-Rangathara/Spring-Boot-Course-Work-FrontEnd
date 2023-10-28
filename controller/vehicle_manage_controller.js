@@ -1,6 +1,6 @@
-import {getLastOnGoingDriverId, saveDriver, updateDriver} from "../model/driver_model.js";
+import {getNewDriverId, saveDriver, updateDriver} from "../model/driver_model.js";
 import {
-    updateVehicle, getLastOnGoingVehicleId, saveVehicle, deleteVehicle, getVehicle, existsByVehiclesId
+    updateVehicle, getNewVehicleId, saveVehicle, deleteVehicle, getVehicle, existsByVehiclesId
 } from "../model/vehicle_model.js";
 
 const vehicle_id_regex = /^V\d{3,}$/;
@@ -46,8 +46,8 @@ function clearManageVehicleForm() {
 
 
 // get last vehicle id -------------------------------------------------------------
-function getLastVehicleId() {
-    let promise = getLastOnGoingVehicleId();
+function getNewVehicleIdForTextField() {
+    let promise = getNewVehicleId();
     promise.then((data) => {
         console.log("vehicle id : " + data)
         $('#manage_vehicle_id').val(data);
@@ -57,8 +57,8 @@ function getLastVehicleId() {
 }
 
 
-function getLastDriverId() {
-    let promise = getLastOnGoingDriverId();
+function getNewDriverIdForTextField() {
+    let promise = getNewDriverId();
     promise.then((data) => {
         console.log("driver id : " + data)
         $('#manage_vehicle_driver_id').val(data);
@@ -70,8 +70,8 @@ function getLastDriverId() {
 $('#manage_vehicle_btn_new').on('click', (e) => {
     e.preventDefault()
     clearManageVehicleForm();
-    getLastVehicleId();
-    getLastDriverId();
+    getNewDriverIdForTextField();
+    getNewVehicleIdForTextField();
 })
 
 
@@ -457,8 +457,6 @@ $('#vehicle_search_button').on('click', (e) => {
         $('#manage_vehicle_btn_save').prop('disabled', false);
     }
 })
-
-// ============================================================================================
 
 
 $(document).ready(() => {

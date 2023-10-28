@@ -1,3 +1,4 @@
+//-------------------------------  save driver  ----------------------------------------
 export function saveDriver(driver) {
     console.log("save_driver " + JSON.stringify(driver));
     return new Promise((resolve, reject) => {
@@ -26,21 +27,7 @@ export function saveDriver(driver) {
     });
 }
 
-
-export function getLastOnGoingDriverId() {
-    return new Promise((resolve, reject) => {
-        let settings = {
-            "url": "http://localhost:9096/vehicle/api/v1/driver/get/lastId", "method": "GET", "timeout": 0,
-        };
-        $.ajax(settings).done(function (response, textStatus, jqXHR) {
-            resolve(response);
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown)
-            reject(errorThrown);
-        });
-    })
-}
-
+//-------------------------------  update driver  ----------------------------------------
 export function updateDriver(driver) {
     console.log("update driver " + JSON.stringify(driver));
     return new Promise((resolve, reject) => {
@@ -68,3 +55,19 @@ export function updateDriver(driver) {
         });
     });
 }
+
+//-------------------------------  get new driver id  ----------------------------------------
+export function getNewDriverId() {
+    return new Promise((resolve, reject) => {
+        let settings = {
+            "url": "http://localhost:9096/vehicle/api/v1/driver/get/lastId", "method": "GET", "timeout": 0,
+        };
+        $.ajax(settings).done(function (response, textStatus, jqXHR) {
+            resolve(response);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown)
+            reject(errorThrown);
+        });
+    })
+}
+
