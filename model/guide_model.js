@@ -148,7 +148,7 @@ export function getNewGuideId (){
 export function checkGuideExists (guideId){
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:9095/guide/api/v1/guide/check",
+            "url": "http://localhost:9095/guide/api/v1/guide/check/",
             "method": "GET",
             "timeout": 0,
             "headers": {
