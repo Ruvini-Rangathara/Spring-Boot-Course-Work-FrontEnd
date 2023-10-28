@@ -31,7 +31,6 @@ export function saveGuide (guide){
     });
 }
 
-
 //----------------------------------------   update guide  ----------------------------------------
 export function updateGuide (guide){
     console.log("update guide " + JSON.stringify(guide));
@@ -60,6 +59,48 @@ export function updateGuide (guide){
             console.log(response);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             reject("Error while updating guide");
+        });
+    });
+}
+
+//----------------------------------------   delete guide  ----------------------------------------
+export function deleteGuide (guideId){
+    return new Promise((resolve, reject) => {
+        let settings = {
+            "url": "http://localhost:9095/guide/api/v1/guide/delete",
+            "method": "DELETE",
+            "timeout": 0,
+            "headers": {
+                "id": guideId,
+            },
+        };
+
+        $.ajax(settings).done(function (response, textStatus, jqXHR) {
+            resolve(true);
+            console.log(response);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            reject("Error while deleting guide");
+        });
+    });
+}
+
+//----------------------------------------   get guide  ----------------------------------------
+export function getGuide (guideId){
+    return new Promise((resolve, reject) => {
+        let settings = {
+            "url": "http://localhost:9095/guide/api/v1/guide/get",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "id": guideId,
+            },
+        };
+
+        $.ajax(settings).done(function (response, textStatus, jqXHR) {
+            resolve(response);
+            console.log(response);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            reject("Error while getting guide");
         });
     });
 }
