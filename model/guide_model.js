@@ -2,15 +2,16 @@
 //----------------------------------------   save guide  ----------------------------------------
 export function saveGuide (guide){
     console.log("save guide " + JSON.stringify(guide));
+
     return new Promise((resolve, reject) => {
         const guideBlob = new Blob([JSON.stringify(guide)], {type: "application/json"});
         let formData = new FormData();
         formData.append("guide", guideBlob);
-        formData.append("photo", $('#manage_guide_image_file')[0].files[0]);
-        formData.append("nicFrontImage", $('#manage_guide_nic_front_file')[0].files[0]);
-        formData.append("nicBackImage", $('#manage_guide_nic_back_file')[0].files[0]);
-        formData.append("guidIdFrontImage", $('#manage_guide_id_front_file')[0].files[0]);
-        formData.append("guidIdBackImage", $('#manage_guide_id_back_file')[0].files[0]);
+        formData.append("profile", $('#manage_guide_image_file')[0].files[0]);
+        formData.append("nic_front", $('#manage_guide_nic_front_file')[0].files[0]);
+        formData.append("nic_back", $('#manage_guide_nic_back_file')[0].files[0]);
+        formData.append("guide_id_front", $('#manage_guide_id_front_file')[0].files[0]);
+        formData.append("guide_id_back", $('#manage_guide_id_back_file')[0].files[0]);
 
         let settings = {
             "url": "http://localhost:9095/guide/api/v1/guide/save",
@@ -35,14 +36,15 @@ export function saveGuide (guide){
 export function updateGuide (guide){
     console.log("update guide " + JSON.stringify(guide));
     return new Promise((resolve, reject) => {
+
         const guideBlob = new Blob([JSON.stringify(guide)], {type: "application/json"});
         let formData = new FormData();
         formData.append("guide", guideBlob);
-        formData.append("photo", $('#manage_guide_image_file')[0].files[0]);
-        formData.append("nicFrontImage", $('#manage_guide_nic_front_file')[0].files[0]);
-        formData.append("nicBackImage", $('#manage_guide_nic_back_file')[0].files[0]);
-        formData.append("guidIdFrontImage", $('#manage_guide_id_front_file')[0].files[0]);
-        formData.append("guidIdBackImage", $('#manage_guide_id_back_file')[0].files[0]);
+        formData.append("profile", $('#manage_guide_image_file')[0].files[0]);
+        formData.append("nic_front", $('#manage_guide_nic_front_file')[0].files[0]);
+        formData.append("nic_back", $('#manage_guide_nic_back_file')[0].files[0]);
+        formData.append("guide_id_front", $('#manage_guide_id_front_file')[0].files[0]);
+        formData.append("guide_id_back", $('#manage_guide_id_back_file')[0].files[0]);
 
         let settings = {
             "url": "http://localhost:9095/guide/api/v1/guide/update",
@@ -54,8 +56,9 @@ export function updateGuide (guide){
             "data": formData
         };
 
+        console.log("update guide in guide model : " + JSON.stringify(settings));
         $.ajax(settings).done(function (response, textStatus, jqXHR) {
-            resolve(true);
+            resolve(response);
             console.log(response);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             reject("Error while updating guide");
@@ -65,6 +68,7 @@ export function updateGuide (guide){
 
 //----------------------------------------   delete guide  ----------------------------------------
 export function deleteGuide (guideId){
+    console.log("deleted id in guide model : "+guideId)
     return new Promise((resolve, reject) => {
         let settings = {
             "url": "http://localhost:9095/guide/api/v1/guide/delete",
@@ -76,8 +80,7 @@ export function deleteGuide (guideId){
         };
 
         $.ajax(settings).done(function (response, textStatus, jqXHR) {
-            resolve(true);
-            console.log(response);
+            resolve(response);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             reject("Error while deleting guide");
         });

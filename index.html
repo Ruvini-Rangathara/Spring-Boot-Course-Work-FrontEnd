@@ -897,17 +897,23 @@
 
 <!--==================================  manage guide form   ===========================-->
 <div class="manage_guide_container profile profile-view" id="guide_profile">
-    <div class="row">
-        <div class="col-md-12 alert-col relative">
-            <div class="alert alert-info absolue center" role="alert">
-                <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
-                <span>Profile save with success</span></div>
-        </div>
-    </div>
+
     <form>
         <div class="row profile-row">
             <div class="col-md-12 relative" style="padding-right: 0px;padding-left: 0px;">
                 <h1>Guide Details</h1>
+                <br>
+
+                <div class="input-group"><span class="input-group-text">
+                        <i class="fa fa-search"></i></span>
+                    <input class="form-control" id="guide_search_input" placeholder="Enter ID for search.." type="text" style="height: 40px"/>
+                    <button class="btn btn-light" id="guide_search_button" type="button"
+                            style="background-color: #0d6efd; color: white; height: 40px">Search</button>
+                    <button class="btn btn-primary form-btn right" id="manage_guide_btn_new"
+                            style="background-color: #146c43; margin-left: 15px" type="submit">New</button>
+                </div>
+                <hr/>
+
                 <div class="avatar"
                      style="padding-right: 99px;margin-left: -4px;padding-left: 0px;margin-right: 101px;">
                     <div class="avatar-bg center"

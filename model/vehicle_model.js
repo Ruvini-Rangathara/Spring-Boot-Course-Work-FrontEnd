@@ -49,6 +49,7 @@ export function updateVehicle(vehicle){
 
         form.append("driver_id",$('#manage_vehicle_driver_id').val(),);
         console.log($("#manage_vehicle_driver_id").val())
+
         let settings = {
             "url": "http://localhost:9096/vehicle/api/v1/vehicle/update",
             "method": "PUT",
