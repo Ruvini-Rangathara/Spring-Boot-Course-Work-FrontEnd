@@ -380,7 +380,7 @@ function selectRadioButtonManageHybridOrNonHybrid(hybridOrNon) {
         $('#manage_vehicle_radio_non_hybrid').prop('checked', true);
     }
 }
-selectRadioButtonManageVehicleAvailability
+
 //------------------------  select Radio Button Manage Vehicle Availability  -----------------------------
 function selectRadioButtonManageVehicleAvailability(availability) {
     if (availability === 'Available') {
@@ -462,7 +462,6 @@ $('#vehicle_search_button').on('click', (e) => {
         })
     } else {
         alert("Invalid vehicle id !");
-        $('#manage_vehicle_btn_save').prop('disabled', false);
     }
 })
 
