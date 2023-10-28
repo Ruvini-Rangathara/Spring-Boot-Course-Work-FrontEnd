@@ -104,3 +104,60 @@ export function getGuide (guideId){
         });
     });
 }
+
+//----------------------------------------   get all guides  ----------------------------------------
+export function getAllGuides (){
+    return new Promise((resolve, reject) => {
+        let settings = {
+            "url": "http://localhost:9095/guide/api/v1/guide/getAll",
+            "method": "GET",
+            "timeout": 0,
+        };
+
+        $.ajax(settings).done(function (response, textStatus, jqXHR) {
+            resolve(response);
+            console.log(response);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            reject("Error while getting guides");
+        });
+    });
+}
+
+//----------------------------------------   get last guide id  ----------------------------------------
+export function getLastGuideId (){
+    return new Promise((resolve, reject) => {
+        let settings = {
+            "url": "http://localhost:9095/guide/api/v1/guide/get/lastId",
+            "method": "GET",
+            "timeout": 0,
+        };
+
+        $.ajax(settings).done(function (response, textStatus, jqXHR) {
+            resolve(response);
+            console.log(response);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            reject("Error while getting last guide id");
+        });
+    });
+}
+
+//----------------------------------------   check guide exists  ----------------------------------------
+export function checkGuideExists (guideId){
+    return new Promise((resolve, reject) => {
+        let settings = {
+            "url": "http://localhost:9095/guide/api/v1/guide/check",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "id": guideId,
+            },
+        };
+
+        $.ajax(settings).done(function (response, textStatus, jqXHR) {
+            resolve(response);
+            console.log(response);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            reject("Error while checking guide exists");
+        });
+    });
+}
