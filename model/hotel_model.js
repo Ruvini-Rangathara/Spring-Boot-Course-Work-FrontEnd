@@ -5,11 +5,12 @@ export function saveHotel(hotel) {
         const hotelBlob = new Blob([JSON.stringify(hotel)], {type: 'application/json'});
         let form = new FormData();
 
-        form.append("hotel", hotelBlob);
-        form.append("hotel_img1", $('#hotel_manage_image_file1')[0].files[0],);
-        form.append("hotel_img2", $('#hotel_manage_image_file2')[0].files[0],);
-        form.append("hotel_img3", $('#hotel_manage_image_file3')[0].files[0],);
-        form.append("hotel_img4", $('#hotel_manage_image_file4')[0].files[0],);
+        form.append("requestHotel", hotelBlob);
+        form.append("hotel_img1", $('#hotel_manage_photo_file1')[0].files[0],);
+        form.append("hotel_img2", $('#hotel_manage_photo_file2')[0].files[0],);
+        form.append("hotel_img3", $('#hotel_manage_photo_file3')[0].files[0],);
+        form.append("hotel_img4", $('#hotel_manage_photo_file4')[0].files[0],);
+
 
         let settings = {
             "url": "http://localhost:9097/hotel/api/v1/hotel/save",
@@ -35,11 +36,11 @@ export function updateHotel(hotel) {
         const hotelBlob = new Blob([JSON.stringify(hotel)], {type: 'application/json'});
         let form = new FormData();
 
-        form.append("hotel", hotelBlob);
-        form.append("hotel_img1", $('#hotel_manage_image_file1')[0].files[0],);
-        form.append("hotel_img2", $('#hotel_manage_image_file2')[0].files[0],);
-        form.append("hotel_img3", $('#hotel_manage_image_file3')[0].files[0],);
-        form.append("hotel_img4", $('#hotel_manage_image_file4')[0].files[0],);
+        form.append("requestHotel", hotelBlob);
+        form.append("hotel_img1", $('#hotel_manage_photo_file1')[0].files[0],);
+        form.append("hotel_img2", $('#hotel_manage_photo_file2')[0].files[0],);
+        form.append("hotel_img3", $('#hotel_manage_photo_file3')[0].files[0],);
+        form.append("hotel_img4", $('#hotel_manage_photo_file4')[0].files[0],);
 
         let settings = {
             "url": "http://localhost:9097/hotel/api/v1/hotel/update",
@@ -84,9 +85,7 @@ export function deleteHotel(hotelId) {
 export function getHotel(hotelCode) {
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:9097/hotel/api/v1/hotel/get",
-            "method": "GET", "timeout": 0,
-            "headers": {
+            "url": "http://localhost:9097/hotel/api/v1/hotel/get", "method": "GET", "timeout": 0, "headers": {
                 "id": hotelCode,
             },
         };
@@ -106,8 +105,7 @@ export function getHotel(hotelCode) {
 export function getNewHotelCode() {
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:9097/hotel/api/v1/hotel/get/lastId",
-            "method": "GET", "timeout": 0,
+            "url": "http://localhost:9097/hotel/api/v1/hotel/get/lastId", "method": "GET", "timeout": 0,
         };
 
         $.ajax(settings).done(function (response, textStatus, jqXHR) {
@@ -146,8 +144,7 @@ export function existsById(hotelId) {
 export function getAllHotels() {
     return new Promise((resolve, reject) => {
         let settings = {
-            "url": "http://localhost:9097/hotel/api/v1/hotel/getAll",
-            "method": "GET", "timeout": 0,
+            "url": "http://localhost:9097/hotel/api/v1/hotel/getAll", "method": "GET", "timeout": 0,
         };
 
         $.ajax(settings).done(function (response, textStatus, jqXHR) {

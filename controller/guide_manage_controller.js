@@ -61,7 +61,8 @@ function checkImages() {
     }
     if ($("#manage_guide_nic_front_file").val() === "") {
         Swal.fire({
-            icon: 'error', title: 'Oops...', text: 'Please upload a nic front image',
+            icon: 'error', title: 'Oops...',
+            text: 'Please upload a nic front image',
         })
         return false;
     }

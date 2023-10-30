@@ -56,14 +56,15 @@
             width: 100px;
         }
 
-        input[type=text], input[type=number], input[type=date]{
+        input[type=text], input[type=number], input[type=date] {
             font-size: 15px;
             height: 25px;
         !important;
         }
 
-        input[type=file]{
-            height: 30px; !important;
+        input[type=file] {
+            height: 30px;
+        !important;
         }
 
         @media screen and (max-width: 768px) {
@@ -576,30 +577,72 @@
 
 <!--======================================   hotel manage  =======================================-->
 <div class="container hotel_profile hotel_profile-view" id="hotel_profile">
-    <div class="row">
-        <div class="col-md-12 alert-col relative">
-            <div class="alert alert-info absolue center" role="alert">
-                <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
-                <span>Profile save with success</span>
-            </div>
-        </div>
-    </div>
+
     <form>
         <div class="row profile-row">
             <div class="col"></div>
             <div class="col-md-12">
                 <h1>Hotel Details</h1>
                 <hr/>
-                <div class="avatar-bg center" id="manage_hotel_image"
-                     style=" width:300px ; margin-bottom:20px ;background-image: url('assert/image/hotel3.jpeg'); border-radius: 0"></div>
+
+                <div class="input-group"><span class="input-group-text">
+                        <i class="fa fa-search"></i></span>
+                    <input class="form-control" id="hotel_search_input" placeholder="Enter ID for search.."
+                           style="height: 40px"
+                           type="text"/>
+                    <button class="btn btn-light" id="hotel_search_button"
+                            style="background-color: #0d6efd; color: white; height: 40px"
+                            type="button">Search
+                    </button>
+                    <button class="btn btn-primary form-btn right" id="manage_hotel_btn_new"
+                            style="background-color: #146c43; margin-left: 15px" type="submit">New
+                    </button>
+                </div>
+                <hr/>
+
+
                 <div class="row">
                     <div class="col-md-4"></div>
+
                     <div class="col-sm-12 col-md-4">
-                        <div class="form-group mb-3">
+                            <div class="avatar-bg center" id="manage_hotel_image1"
+                                 style=" width:300px ; margin-bottom:20px ;
+                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
+                            </div>
                             <input class="form-control form-control"
-                                   id="hotel_manage_photo_file"
-                                   style="padding-left: 17px;padding-right: 17px;" type="file"/></div>
+                                   id="hotel_manage_photo_file1"
+                                   style="padding-left: 17px;padding-right: 17px;" type="file"/>
                     </div>
+
+                    <div class="col-sm-12 col-md-4">
+                            <div class="avatar-bg center" id="manage_hotel_image2"
+                                 style=" width:300px ; margin-bottom:20px ;
+                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
+                            </div>
+                            <input class="form-control form-control"
+                                   id="hotel_manage_photo_file2"
+                                   style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="avatar-bg center" id="manage_hotel_image3"
+                             style=" width:300px ; margin-bottom:20px ;
+                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
+                        </div>
+                        <input class="form-control form-control"
+                               id="hotel_manage_photo_file3"
+                               style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="avatar-bg center" id="manage_hotel_image4"
+                             style=" width:300px ; margin-bottom:20px ;
+                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
+                        </div>
+                        <input class="form-control form-control"
+                               id="hotel_manage_photo_file4"
+                               style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                    </div>
+
+
                     <div class="col-sm-12 col-md-4"></div>
                 </div>
                 <div class="row">
@@ -621,6 +664,9 @@
                 <label class="form-label" style="margin-top: 15px;">Hotel Category</label>
                 <input autocomplete="off" class="form-control" id="manage_hotel_category" name="manage_hotel_category"
                        type="text"/>
+                <label class="form-label" style="margin-top: 15px;">Star Rate</label>
+                <input autocomplete="off" class="form-control" id="manage_hotel_star_rate" name=""
+                       type="text"/>
                 <label class="form-label" style="margin-top: 15px;">Location</label>
                 <input autocomplete="off" class="form-control" id="manage_hotel_location" name="manage_hotel_location"
                        type="text"/>
@@ -635,13 +681,17 @@
                     <div class="col-md-3">
                         <label class="form-label" style="margin-top: 15px;">Pets Allowed Or Not</label>
                         <div class="form-check">
-                            <input class="form-check-input" id="manage_hotel_allowed_pet" type="radio"/>
+                            <input class="form-check-input" id="manage_hotel_allowed_pet"
+                                   name="mange_hotel_pet_allowed_or_not"
+                                   type="radio"/>
                             <label class="form-check-label" for="manage_hotel_allowed_pet">Allowed</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check" style="margin-top: 49px;">
-                            <input class="form-check-input" id="manage_hotel_not_allowed_pet" type="radio"/>
+                            <input class="form-check-input" id="manage_hotel_not_allowed_pet"
+                                   name="mange_hotel_pet_allowed_or_not"
+                                   type="radio"/>
                             <label class="form-check-label" for="manage_hotel_not_allowed_pet">Not Allowed</label>
                         </div>
                     </div>
@@ -906,11 +956,16 @@
 
                 <div class="input-group"><span class="input-group-text">
                         <i class="fa fa-search"></i></span>
-                    <input class="form-control" id="guide_search_input" placeholder="Enter ID for search.." type="text" style="height: 40px"/>
-                    <button class="btn btn-light" id="guide_search_button" type="button"
-                            style="background-color: #0d6efd; color: white; height: 40px">Search</button>
+                    <input class="form-control" id="guide_search_input" placeholder="Enter ID for search.."
+                           style="height: 40px"
+                           type="text"/>
+                    <button class="btn btn-light" id="guide_search_button"
+                            style="background-color: #0d6efd; color: white; height: 40px"
+                            type="button">Search
+                    </button>
                     <button class="btn btn-primary form-btn right" id="manage_guide_btn_new"
-                            style="background-color: #146c43; margin-left: 15px" type="submit">New</button>
+                            style="background-color: #146c43; margin-left: 15px" type="submit">New
+                    </button>
                 </div>
                 <hr/>
 
@@ -947,13 +1002,15 @@
                         <label class="form-label"
                                style="margin-right: 35px;padding-left: 0px;padding-top: 2px;margin-top: 5px;padding-right: 0px;margin-left: 35px;">Gender </label>
                         <div class="form-check" style="margin-left: 33px;">
-                            <input class="form-check-input" id="manage_guide_radio_male" type="radio" name="manage_guide_gender"/>
+                            <input class="form-check-input" id="manage_guide_radio_male" name="manage_guide_gender"
+                                   type="radio"/>
                             <label class="form-check-label" for="manage_guide_radio_male">Male</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-check" style="padding-bottom: 0px;margin-top: 39px;">
-                            <input class="form-check-input" id="manage_guide_radio_female" type="radio" name="manage_guide_gender"/>
+                            <input class="form-check-input" id="manage_guide_radio_female" name="manage_guide_gender"
+                                   type="radio"/>
                             <label class="form-check-label" for="manage_guide_radio_female">Female</label>
                         </div>
                     </div>
@@ -983,7 +1040,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Experience</label>
-                            <input class="form-control" name="firstname" type="text" id="manage_guide_experience"/>
+                            <input class="form-control" id="manage_guide_experience" name="firstname" type="text"/>
                         </div>
                         <label class="form-label" style="padding-top: 24px;">Guide ID Front Image</label>
                         <input class="form-control form-control" id="manage_guide_id_front_file"
@@ -1063,100 +1120,100 @@
                 </div>
                 <div class="bg-light border rounded shadow card"></div>
             </div>
-<!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-<!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-<!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-<!--                                                                      src="assert/image/vehicle1.png"/>-->
-<!--                    <div class="card-body">-->
-<!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-<!--                        <label class="form-label">Vehicle Type : Van</label>-->
-<!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-<!--                        <label class="form-label">Brand : KDH</label>-->
-<!--                        <label class="form-label">Seat Capacity : 12</label>-->
-<!--                        <label class="form-label"></label>-->
-<!--                        <button class="btn btn-outline-success"-->
-<!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-<!--                                type="button">View More  -->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="bg-light border rounded shadow card"></div>-->
-<!--            </div>-->
-<!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-<!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-<!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-<!--                                                                      src="assert/image/vehicle1.png"/>-->
-<!--                    <div class="card-body">-->
-<!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-<!--                        <label class="form-label">Vehicle Type : Van</label>-->
-<!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-<!--                        <label class="form-label">Brand : KDH</label>-->
-<!--                        <label class="form-label">Seat Capacity : 12</label>-->
-<!--                        <label class="form-label"></label>-->
-<!--                        <button class="btn btn-outline-success"-->
-<!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-<!--                                type="button">View More  -->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="bg-light border rounded shadow card"></div>-->
-<!--            </div>-->
-<!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-<!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-<!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-<!--                                                                      src="assert/image/vehicle1.png"/>-->
-<!--                    <div class="card-body">-->
-<!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-<!--                        <label class="form-label">Vehicle Type : Van</label>-->
-<!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-<!--                        <label class="form-label">Brand : KDH</label>-->
-<!--                        <label class="form-label">Seat Capacity : 12</label>-->
-<!--                        <label class="form-label"></label>-->
-<!--                        <button class="btn btn-outline-success"-->
-<!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-<!--                                type="button">View More  -->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="bg-light border rounded shadow card"></div>-->
-<!--            </div>-->
-<!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-<!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-<!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-<!--                                                                      src="assert/image/vehicle1.png"/>-->
-<!--                    <div class="card-body">-->
-<!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-<!--                        <label class="form-label">Vehicle Type : Van</label>-->
-<!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-<!--                        <label class="form-label">Brand : KDH</label>-->
-<!--                        <label class="form-label">Seat Capacity : 12</label>-->
-<!--                        <label class="form-label"></label>-->
-<!--                        <button class="btn btn-outline-success"-->
-<!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-<!--                                type="button">View More  -->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="bg-light border rounded shadow card"></div>-->
-<!--            </div>-->
-<!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-<!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-<!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-<!--                                                                      src="assert/image/vehicle1.png"/>-->
-<!--                    <div class="card-body">-->
-<!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-<!--                        <label class="form-label">Vehicle Type : Van</label>-->
-<!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-<!--                        <label class="form-label">Brand : KDH</label>-->
-<!--                        <label class="form-label">Seat Capacity : 12</label>-->
-<!--                        <label class="form-label"></label>-->
-<!--                        <button class="btn btn-outline-success"-->
-<!--                                style="font-weight: normal;font-family: Antic, sans-serif;" type="button">View More  -->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="bg-light border rounded shadow card"></div>-->
-<!--            </div>-->
+            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
+            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
+            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
+            <!--                                                                      src="assert/image/vehicle1.png"/>-->
+            <!--                    <div class="card-body">-->
+            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
+            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
+            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
+            <!--                        <label class="form-label">Brand : KDH</label>-->
+            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
+            <!--                        <label class="form-label"></label>-->
+            <!--                        <button class="btn btn-outline-success"-->
+            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
+            <!--                                type="button">View More  -->
+            <!--                        </button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="bg-light border rounded shadow card"></div>-->
+            <!--            </div>-->
+            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
+            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
+            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
+            <!--                                                                      src="assert/image/vehicle1.png"/>-->
+            <!--                    <div class="card-body">-->
+            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
+            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
+            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
+            <!--                        <label class="form-label">Brand : KDH</label>-->
+            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
+            <!--                        <label class="form-label"></label>-->
+            <!--                        <button class="btn btn-outline-success"-->
+            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
+            <!--                                type="button">View More  -->
+            <!--                        </button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="bg-light border rounded shadow card"></div>-->
+            <!--            </div>-->
+            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
+            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
+            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
+            <!--                                                                      src="assert/image/vehicle1.png"/>-->
+            <!--                    <div class="card-body">-->
+            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
+            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
+            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
+            <!--                        <label class="form-label">Brand : KDH</label>-->
+            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
+            <!--                        <label class="form-label"></label>-->
+            <!--                        <button class="btn btn-outline-success"-->
+            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
+            <!--                                type="button">View More  -->
+            <!--                        </button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="bg-light border rounded shadow card"></div>-->
+            <!--            </div>-->
+            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
+            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
+            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
+            <!--                                                                      src="assert/image/vehicle1.png"/>-->
+            <!--                    <div class="card-body">-->
+            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
+            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
+            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
+            <!--                        <label class="form-label">Brand : KDH</label>-->
+            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
+            <!--                        <label class="form-label"></label>-->
+            <!--                        <button class="btn btn-outline-success"-->
+            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
+            <!--                                type="button">View More  -->
+            <!--                        </button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="bg-light border rounded shadow card"></div>-->
+            <!--            </div>-->
+            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
+            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
+            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
+            <!--                                                                      src="assert/image/vehicle1.png"/>-->
+            <!--                    <div class="card-body">-->
+            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
+            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
+            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
+            <!--                        <label class="form-label">Brand : KDH</label>-->
+            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
+            <!--                        <label class="form-label"></label>-->
+            <!--                        <button class="btn btn-outline-success"-->
+            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;" type="button">View More  -->
+            <!--                        </button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="bg-light border rounded shadow card"></div>-->
+            <!--            </div>-->
         </div>
 
         <div class="content-right" style="margin-top: 10px; margin-bottom: 20px">
@@ -1178,11 +1235,15 @@
 
                 <div class="input-group"><span class="input-group-text">
                         <i class="fa fa-search"></i></span>
-                    <input class="form-control" id="vehicle_search_input" placeholder="Enter ID for search.." type="text" style="height: 30px"/>
-                    <button class="btn btn-light" id="vehicle_search_button" type="button"
-                            style="background-color: #0d6efd; color: white; height: 32px">Search</button>
+                    <input class="form-control" id="vehicle_search_input" placeholder="Enter ID for search.."
+                           style="height: 30px" type="text"/>
+                    <button class="btn btn-light" id="vehicle_search_button"
+                            style="background-color: #0d6efd; color: white; height: 32px"
+                            type="button">Search
+                    </button>
                     <button class="btn btn-primary form-btn right" id="manage_vehicle_btn_new"
-                            style="background-color: #146c43; margin-left: 15px" type="submit">New</button>
+                            style="background-color: #146c43; margin-left: 15px" type="submit">New
+                    </button>
                 </div>
                 <hr/>
 
@@ -1314,7 +1375,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group mb-3" style="margin-left: -14px">
                         <label class="form-label" style="padding-top: 0px;margin-top: 20px;">Price Per Day</label>
-                        <input  id="manage_vehicle_price_per_day"
+                        <input id="manage_vehicle_price_per_day"
                                name="price"
                                style="padding-right: 300px;margin-left: 2px;padding-left: 7px;margin-right: -297px;"
                                type="text"/>
@@ -1370,9 +1431,11 @@
 
                     <div class="col-md-12 content-right"
                          style="padding-bottom: 0px;margin-top: 1px;margin-bottom: 43px;">
-                        <button class="btn btn-primary form-btn" id="manage_vehicle_btn_save" type="submit">Save</button>
+                        <button class="btn btn-primary form-btn" id="manage_vehicle_btn_save" type="submit">Save
+                        </button>
                         <button class="btn btn-primary form-btn" id="manage_vehicle_btn_update"
-                                style="background-color: #146c43" type="submit">Update</button>
+                                style="background-color: #146c43" type="submit">Update
+                        </button>
                         <button class="btn btn-danger form-btn" id="manage_vehicle_btn_delete" type="submit">Delete
                         </button>
                         <hr/>
