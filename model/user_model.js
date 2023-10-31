@@ -29,7 +29,7 @@ export function saveUser(user) {
 
 
 //----------------------------------------   update user  ----------------------------------------
-export function updateUser(user) {
+function updateUser(user) {
     console.log("update user " + JSON.stringify(user));
     return new Promise((resolve, reject) => {
 
@@ -61,7 +61,7 @@ export function updateUser(user) {
 
 
 //--------------------------------------------- get all users ------------------------------------------------
-export function getAllUsers() {
+function getAllUsers() {
     return new Promise((resolve, reject) => {
         $.ajax({
             url: "http://localhost:9099/user/api/v1/user/getAll",
@@ -78,7 +78,7 @@ export function getAllUsers() {
 
 
 //--------------------------------------------- get user by id ------------------------------------------------
-export function getUserById(id) {
+function getUserById(id) {
     return new Promise((resolve, reject) => {
         let settings = {
             "url": "http://localhost:9099/user/api/v1/user/get",
@@ -99,7 +99,7 @@ export function getUserById(id) {
 }
 
 //--------------------------------------------- delete user ------------------------------------------------
-export function deleteUser (username){
+function deleteUser (username){
     console.log("deleted id in user model : "+username)
     return new Promise((resolve, reject) => {
         let settings = {
@@ -120,12 +120,11 @@ export function deleteUser (username){
 }
 
 //--------------------------------------------- get exists by id ------------------------------------------------
-export function checkUserExists (username){
+export function existsById(username) {
     return new Promise((resolve, reject) => {
         let settings = {
             "url": "http://localhost:9099/user/api/v1/user/check/",
-            "method": "GET",
-            "timeout": 0,
+            "method": "GET", "timeout": 0,
             "headers": {
                 "id": username,
             },
@@ -133,10 +132,10 @@ export function checkUserExists (username){
 
         $.ajax(settings).done(function (response, textStatus, jqXHR) {
             resolve(response);
-            console.log(response);
+            console.log(response)
         }).fail(function (jqXHR, textStatus, errorThrown) {
-            reject("Error while checking user exists");
+            reject(false);
         });
+
     });
 }
-
