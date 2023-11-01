@@ -310,3 +310,8 @@ $('#guide_search_button').on('click', (e) => {
 $(document).ready(() => {
     clearGuideForm();
 })
+
+//-------------------------------------------- add to package ------------------------------------
+$('#guide_manage_btn_add_to_package').on('click', (e) => {
+    $('#selected_guide').val($("#manage_guide_id"));
+})

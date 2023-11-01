@@ -1,6 +1,7 @@
 import {
     savePackage, updatePackage, getPackageDetails, getNewPackageId, existsByPackageId
 } from '../model/package_model.js';
+import {getHotel} from "../model/hotel_model";
 
 // --------------------------------------------- regex for package details ---------------------------------------------
 const regexPackageId = /^P\d{3,}$/;
@@ -388,10 +389,28 @@ $(document).ready(function () {
     clearPackageForm();
 })
 
+//---------------------------------------------  get hotel option price -------------------------------------------
+// $("#hotel_search_button").on('click', (e) => {
+//     e.preventDefault();
+//      getHotel($('#selected_hotel').val()).then((data) => {
+//
+//             $("#opt_1_price").val(data.opt1_price);
+//             $("#opt_2_price").val(data.opt2_price);
+//             $("#opt_3_price").val(data.opt3_price);
+//             $("#opt_4_price").val(data.opt4_price);
+//
+//         }).catch((error) => {
+//             console.log(error);
+//         });
+// })
 
 
-
-
+// ------------------------Add event listeners to the radio buttons-----------------------------------------
+$("#no_need_guide").addEventListener("change", function() {
+    if ($('#no_need_guide').checked) {
+        $('#btn_select_guide').disable();
+    }
+});
 
 
 

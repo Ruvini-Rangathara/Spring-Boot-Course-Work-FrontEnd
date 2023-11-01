@@ -483,3 +483,9 @@ function setImages(dataImageList) {
 $(document).ready(() => {
     clearManageVehicleForm();
 })
+
+
+//-------------------------------------------- add to package ------------------------------------
+$('#manage_vehicle_btn_add_to_package').on('click', (e) => {
+    $('#selected_vehicle').val($("#manage_vehicle_id"));
+})

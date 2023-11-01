@@ -338,8 +338,10 @@ $(document).ready(function () {
 })
 
 
-
-
+//-------------------------------------------- add to package ------------------------------------
+$('#hotel_manage_btn_add_to_package').on('click', (e) => {
+    $('#selected_hotel').val($("#manage_hotel_code"));
+})
 
 
 
