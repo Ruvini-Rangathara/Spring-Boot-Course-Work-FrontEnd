@@ -1,21 +1,32 @@
 
-.vehicle_container .bg-light {
-    width: 250px;
-}
+/*.vehicle_container .bg-light {*/
+/*    width: 250px;*/
+/*}*/
 
 .vehicle_container{
     padding-right: 200px;
     padding-left: 230px;
 }
 
-.vehicle_container label{
-    margin: 0;
+/*.vehicle_container label{*/
+/*    margin: 0;*/
+/*}*/
+
+/*.vehicle_container .card-body{*/
+/*    padding-top: 10px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
+
+#vehicle_view_sub_div{
 }
 
-.vehicle_container .card-body{
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+    /*grid-template-rows: repeat(2, 150px); !* Creates 2 rows with a fixed height of 150px *!*/
+    /*gap: 10px; !* Adds a 10px gap between grid items *!*/
 }

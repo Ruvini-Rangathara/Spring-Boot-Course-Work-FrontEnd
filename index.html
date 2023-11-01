@@ -62,10 +62,127 @@
         !important;
         }
 
+        #package_category{
+            font-size: 14px;
+            height: 30px;
+        }
+
         input[type=file] {
             height: 30px;
         !important;
         }
+
+        #package_btn_update,
+        #hotel_manage_btn_ok, #hotel_manage_btn_update,
+        #guide_manage_btn_ok, #guide_manage_btn_update,
+        #manage_vehicle_btn_ok,
+        #manage_vehicle_btn_update,
+        #manage_guide_btn_new,
+        #manage_hotel_btn_new,
+        #package_btn_new,
+        #manage_vehicle_btn_new{
+            background-color: white;
+            color: #146c43;
+            border: 1px solid #146c43;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 80px;
+            height: 30px;
+        }
+
+        #package_btn_new:hover,
+        #package_btn_update:hover,
+        #hotel_manage_btn_ok:hover,
+        #hotel_manage_btn_update:hover,
+        #guide_manage_btn_ok:hover,
+        #guide_manage_btn_update:hover,
+        #manage_vehicle_btn_ok:hover,
+        #manage_vehicle_btn_update:hover,
+        #manage_guide_btn_new:hover,
+        #manage_hotel_btn_new:hover,
+        #manage_vehicle_btn_new:hover{
+            background-color: #146c43;
+            color: white;
+        }
+
+        #btn_select_vehicle, #btn_select_hotel,
+        #btn_select_guide, #btn_save_package,
+        #hotel_manage_btn_add ,
+        #hotel_manage_btn_add_to_package,
+        #guide_manage_btn_add_to_package,
+        #guide_manage_btn_add,
+        #manage_vehicle_btn_add_to_package,
+        #manage_vehicle_btn_save,#guide_search_button,
+        #hotel_search_button,
+        #package_search_button,
+        #vehicle_search_button{
+            background-color: white;
+            color: #0c63e4;
+            border: 1px solid #0c63e4;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 80px;
+            height: 30px;
+        }
+
+        #btn_select_vehicle:hover,
+        #btn_select_hotel:hover,
+        #btn_select_guide:hover,
+        #btn_save_package:hover,
+        #hotel_manage_btn_add:hover,
+        #hotel_manage_btn_add_to_package:hover,
+        #guide_manage_btn_add_to_package:hover,
+        #guide_manage_btn_add:hover,
+        #manage_vehicle_btn_add_to_package:hover,
+        #manage_vehicle_btn_save:hover,
+        #guide_search_button:hover,
+        #hotel_search_button:hover,
+        #package_search_button:hover,
+        #vehicle_search_button:hover{
+            background-color: #0c63e4;
+            color: white;
+        }
+
+        #package_search_input {
+            height: 27px;
+        }
+
+        #btn_cancel_package,#hotel_manage_btn_delete,
+        #guide_manage_btn_delete,
+        #manage_vehicle_btn_delete{
+            background-color: white;
+            color: #a52834;
+            border: 1px solid #a52834;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 80px;
+            height: 30px;
+        }
+
+        #btn_cancel_package:hover,
+        #hotel_manage_btn_delete:hover,
+        #guide_manage_btn_delete:hover,
+        #manage_vehicle_btn_delete:hover{
+            background-color: #a52834;
+            color: white;
+        }
+
+        #btn_save_package,
+        #hotel_manage_btn_add_to_package,
+        #guide_manage_btn_add_to_package,
+        #manage_vehicle_btn_add_to_package{
+            width: 150px;
+        }
+
 
         @media screen and (max-width: 768px) {
             #about_us_image_section {
@@ -256,17 +373,16 @@
         </div>
     </div>
 
-    <div class="input-group"><span class="input-group-text">
+    <div class="input-group"><span class="input-group-text" style="height: 30px">
                         <i class="fa fa-search"></i></span>
         <input class="form-control" id="package_search_input" placeholder="Enter ID for search.."
-               style="height: 40px"
+               style="height: 30px"
                type="text"/>
         <button class="btn btn-light" id="package_search_button"
-                style="background-color: #0d6efd; color: white; height: 40px"
                 type="button">Search
         </button>
-        <button class="btn btn-primary form-btn right" id="package_btn_new"
-                style="background-color: #146c43; margin-left: 15px" type="submit">New
+        <button class="btn btn-primary  right" id="package_btn_new"
+                style=" margin-left: 15px" type="submit">New
         </button>
     </div>
     <hr/>
@@ -278,18 +394,19 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Package ID</label>
-                            <input class="form-control" id="package_id" readonly name="package_id" type="text"/>
+                            <input class="form-control" id="package_id" name="package_id" readonly type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3"><label class="form-label">Username</label>
-                            <input class="form-control" id="package_username" readonly name="package_username" type="text"/>
+                            <input class="form-control" id="package_username" name="package_username" readonly
+                                   type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">
                         <div class="form-group mb-3"><label class="form-label">Category</label>
-                            <select id="package_category" name="categories" class="form-control">
-                                <option value="" disabled selected>Select an option</option>
+                            <select class="form-control" id="package_category" name="categories">
+                                <option disabled selected value="">Select an option</option>
                                 <option value="economy">Economy</option>
                                 <option value="mid-range">Mid-Range</option>
                                 <option value="luxury">Luxury</option>
@@ -307,13 +424,13 @@
                             <label class="form-label">Need A Guide Or No</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" id="need_guide" type="radio" name="package_need_guide"/>
+                            <input class="form-check-input" id="need_guide" name="package_need_guide" type="radio"/>
                             <label class="form-check-label" for="need_guide">Need</label>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-3" style="margin-left: -25px;">
                         <div class="form-check" style="margin-top: 48px;">
-                            <input class="form-check-input" id="no_need_guide" type="radio"  name="package_need_guide"/>
+                            <input class="form-check-input" id="no_need_guide" name="package_need_guide" type="radio"/>
                             <label class="form-check-label" for="no_need_guide">No Need</label>
                         </div>
                     </div>
@@ -322,14 +439,15 @@
                             <label class="form-label">With Pets Or No</label>
                         </div>
                         <div class="form-check" style="margin-top: 15px;">
-                            <input class="form-check-input" id="with_pet" type="radio"  name="package_with_pet_or_not"/>
+                            <input class="form-check-input" id="with_pet" name="package_with_pet_or_not" type="radio"/>
                             <label class="form-check-label" for="with_pet">With Pets</label>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-3">
                         <div class="form-group mb-3">
                             <div class="form-check" style="margin-top: 46px;">
-                                <input class="form-check-input" id="without_pet" type="radio"  name="package_with_pet_or_not"/>
+                                <input class="form-check-input" id="without_pet" name="package_with_pet_or_not"
+                                       type="radio"/>
                                 <label class="form-check-label" for="without_pet">Without Pets</label>
                             </div>
                         </div>
@@ -419,7 +537,7 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 01</label>
-                            <input class="form-control" id="opt_1_price" readonly name="firstname" type="text"/>
+                            <input class="form-control" id="opt_1_price" name="firstname" readonly type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-2">
@@ -428,7 +546,7 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 02</label>
-                            <input class="form-control" id="opt_2_price" readonly name="opt_2_price" type="text"/>
+                            <input class="form-control" id="opt_2_price" name="opt_2_price" readonly type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-2">
@@ -439,7 +557,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 03</label>
-                            <input autocomplete="off" class="form-control" readonly id="opt_3_price" name="opt_3_price"
+                            <input autocomplete="off" class="form-control" id="opt_3_price" name="opt_3_price" readonly
                                    type="text"/>
                         </div>
                     </div>
@@ -449,7 +567,7 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 04</label>
-                            <input autocomplete="off" class="form-control" readonly id="opt_4_price" name="opt_4_price"
+                            <input autocomplete="off" class="form-control" id="opt_4_price" name="opt_4_price" readonly
                                    type="text"/>
                         </div>
                     </div>
@@ -458,24 +576,24 @@
                         padding-top: 0px;padding-bottom: 11px;" type="number"/>
                     </div>
                     <div class="col-sm-12 col-md-6"><label class="form-label">Package Value</label>
-                        <input autocomplete="off" readonly class="form-control" id="package_value"
-                               name="package_value" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
+                        <input autocomplete="off" class="form-control" id="package_value" name="package_value"
+                               readonly style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6"></div>
                     <div class="col-sm-12 col-md-6">
                         <label class="form-label">Available Promotions</label>
-                        <input autocomplete="off" readonly class="form-control" id="available_promotion"
-                               name="available_promotion" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
+                        <input autocomplete="off" class="form-control" id="available_promotion" name="available_promotion"
+                               readonly style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <label class="form-label">Available Discounts</label>
-                        <input autocomplete="off"  readonly class="form-control" id="available_discount"
-                               name="available_discount" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
+                        <input autocomplete="off" class="form-control" id="available_discount" name="available_discount"
+                               readonly style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <label class="form-label">Net Total</label>
-                        <input autocomplete="off" readonly class="form-control" id="net_total"
-                               name="net_total" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
+                        <input autocomplete="off" class="form-control" id="net_total" name="net_total"
+                               readonly style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6"></div>
                     <div class="col-sm-12 col-md-6">
@@ -504,22 +622,24 @@
                     </div>
                     <div class="col-sm-12 col-md-6"></div>
                     <div class="col-sm-12 col-md-2"></div>
+
                     <div class="col-sm-12 col-md-2">
-                        <button class="btn btn-primary" id="btn_cancel_package" style=" background-color: #a52834;
-                        margin-right: -9px;margin-left: 13px;" type="button">  Cancel  
+                        <button class="btn btn-primary form-btn" id="btn_cancel_package">Cancel
                         </button>
                     </div>
+
                     <div class="col-sm-12 col-md-2">
-                    <button class="btn btn-primary form-btn" id="package_btn_update"
-                            style="background-color: #146c43"
-                            type="submit">Update
-                    </button>
-                    </div>
-                    <div class="col-sm-12 col-md-2" style="margin-top: 0px;margin-bottom: -54px;">
-                        <button class="btn btn-primary" id="btn_save_package"
-                                style="padding-left: 12px;margin-left: -5px;" type="button">   Add Package   
+                        <button class="btn btn-primary form-btn" id="package_btn_update"
+                              >Update
                         </button>
                     </div>
+
+                    <div class="col-sm-12 col-md-2" >
+                        <button class="btn btn-primary form-btn" id="btn_save_package"
+                                 >Add Package
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -595,11 +715,6 @@
             </div>
         </div>
 
-        <div class="content-right">
-            <button class="btn btn-primary form-btn" id="hotel_view_btn_more" style="background-color: #0d6efd"
-                    type="submit"> More
-            </button>
-        </div>
 
     </div>
 </div>
@@ -617,69 +732,66 @@
                 <div class="input-group"><span class="input-group-text">
                         <i class="fa fa-search"></i></span>
                     <input class="form-control" id="hotel_search_input" placeholder="Enter ID for search.."
-                           style="height: 40px"
+                           style="height: 30px"
                            type="text"/>
                     <button class="btn btn-light" id="hotel_search_button"
-                            style="background-color: #0d6efd; color: white; height: 40px"
                             type="button">Search
                     </button>
                     <button class="btn btn-primary form-btn right" id="manage_hotel_btn_new"
-                            style="background-color: #146c43; margin-left: 15px" type="submit">New
+                            style="margin-left: 15px" type="submit">New
                     </button>
                 </div>
                 <hr/>
 
-
                 <div class="row">
-                    <div class="col-md-4"></div>
-
                     <div class="col-sm-12 col-md-4">
-                            <div class="avatar-bg center" id="manage_hotel_image1"
-                                 style=" width:300px ; margin-bottom:20px ;
-                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
-                            </div>
-                            <input class="form-control form-control"
-                                   id="hotel_manage_photo_file1"
-                                   style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                        <div class="vehicle_manage_img_div" id="manage_hotel_image1"
+                             style=" background-image:url('assert/image/hotel8.jpeg'); margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;width: 250px;height: 150px;padding-left: 0px;"></div>
+                        <input class="form-control form-control vehicle_manage_image_file"
+                               id="hotel_manage_photo_file1"
+                               name="avatar-file"
+                               style="margin-top: 10px; margin-right: 17px;padding-left: 7px; padding-right: 0px;font-size: 15px; width: 250px"
+                               type="file"/>
                     </div>
-
-                    <div class="col-sm-12 col-md-4">
-                            <div class="avatar-bg center" id="manage_hotel_image2"
-                                 style=" width:300px ; margin-bottom:20px ;
-                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
-                            </div>
-                            <input class="form-control form-control"
-                                   id="hotel_manage_photo_file2"
-                                   style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                    <div class="col-md-4">
+                        <div class="vehicle_manage_img_div" id="manage_hotel_image2"
+                             style=" background-image:url('assert/image/hotel8.jpeg'); margin-right: 2px;margin-bottom: -2px;width: 250px;height: 150px;padding-bottom: 0px;padding-left: 0px;"></div>
+                        <input class="form-control form-control vehicle_manage_image_file"
+                               id="hotel_manage_photo_file2"
+                               name="avatar-file"
+                               style="margin-top: 10px; margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
+                               type="file"/>
                     </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="avatar-bg center" id="manage_hotel_image3"
-                             style=" width:300px ; margin-bottom:20px ;
-                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
-                        </div>
-                        <input class="form-control form-control"
+                    <div class="col-md-4">
+                        <div class="vehicle_manage_img_div" id="manage_hotel_image3"
+                             style=" background-image:url('assert/image/hotel8.jpeg'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;"></div>
+                        <input class="form-control form-control vehicle_manage_image_file"
                                id="hotel_manage_photo_file3"
-                               style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                               name="avatar-file"
+                               style=" margin-top: 10px; margin-right: 17px;margin-left: 7px;padding-right: 0px;padding-left: 0px;font-size: 15px; width: 250px"
+                               type="file"/>
                     </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="avatar-bg center" id="manage_hotel_image4"
-                             style=" width:300px ; margin-bottom:20px ;
-                                 background-image: url('assert/image/hotel3.jpeg'); border-radius: 0">
-                        </div>
-                        <input class="form-control form-control"
+                    <div class="col"></div>
+                    <div class="col-md-4">
+                        <div class="vehicle_manage_img_div" id="manage_hotel_image4"
+                             style=" background-image:url('assert/image/hotel8.jpeg'); width: 250px;height: 150px;margin-right: 2px;margin-bottom: -2px;padding-bottom: 0px;padding-left: 0px;margin-top: 18px;"></div>
+                        <input class="form-control form-control vehicle_manage_image_file"
                                id="hotel_manage_photo_file4"
-                               style="padding-left: 17px;padding-right: 17px;" type="file"/>
+                               name="avatar-file"
+                               style=" margin-top: 10px;margin-right: 17px;padding-left: 7px;padding-right: 0px;font-size: 15px; width: 250px"
+                               type="file"/>
                     </div>
 
-
-                    <div class="col-sm-12 col-md-4"></div>
+                    <div class="col"></div>
                 </div>
+
+
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Hotel Code</label>
-                            <input autocomplete="off" class="form-control" readonly id="manage_hotel_code"
-                                   name="manage_hotel_code"
+                            <input autocomplete="off" class="form-control" id="manage_hotel_code" name="manage_hotel_code"
+                                   readonly
                                    type="text"/>
                         </div>
                     </div>
@@ -763,12 +875,10 @@
 
 
                     <div class="col-md-12 content-right" style="margin-top: 47px;">
-                        <button class="btn btn-primary form-btn" id="hotel_manage_btn_view_discounts"
-                                style="background-color: #0d6efd"
-                                type="submit">View Discounts
-                        </button>
+<!--                        <button class="btn btn-primary form-btn" id="hotel_manage_btn_view_discounts"-->
+<!--                                type="submit">View Discounts-->
+<!--                        </button>-->
                         <button class="btn btn-primary form-btn" id="hotel_manage_btn_add_to_package"
-                                style="background-color: #146c43"
                                 type="submit">Add To Package
                         </button>
                         <button class="btn btn-primary form-btn" id="hotel_manage_btn_ok" type="submit"> Ok</button>
@@ -776,11 +886,9 @@
 
                     <div class="col-md-12 content-right" style="margin-top: 10px;">
                         <button class="btn btn-primary form-btn" id="hotel_manage_btn_add"
-                                style="background-color: #0d6efd"
                                 type="submit">Add Hotel
                         </button>
                         <button class="btn btn-primary form-btn" id="hotel_manage_btn_update"
-                                style="background-color: #146c43"
                                 type="submit">Update
                         </button>
                         <button class="btn btn-danger form-btn" id="hotel_manage_btn_delete" type="submit">Delete
@@ -789,73 +897,10 @@
 
                 </div>
             </div>
-            <div class="col" style="margin-top: 39px;"></div>
+            <div class="col"></div>
         </div>
     </form>
 </div>
-
-
-<!--&lt;!&ndash;======================================   discount view  =======================================&ndash;&gt;-->
-<!--<div class="discount_view_container py-4 py-xl-5">-->
-<!--    <div class="row mb-5">-->
-<!--        <div class="col-md-8 col-xl-6 text-center mx-auto">-->
-<!--            <h2>Hotel Aknara Panadura</h2>-->
-<!--            <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc.-->
-<!--                Vestibulum dui eget ultrices.</p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="discount_view_sub_div">-->
-<!--        <div class="col-md-4">-->
-<!--            <div class="p-4">-->
-<!--                <h4 style="margin-bottom: -1px;">Discount Code : DIS0001</h4>-->
-<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 1px;">Upper Range : 500000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 1px;">Discount Rate : 5.00</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-4">-->
-<!--            <div class="p-4">-->
-<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
-<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-4">-->
-<!--            <div class="p-4">-->
-<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
-<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-4">-->
-<!--            <div class="p-4">-->
-<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
-<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-4">-->
-<!--            <div class="p-4">-->
-<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
-<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-4">-->
-<!--            <div class="p-4">-->
-<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
-<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
-<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
 
 <!--=====================================   guide view  ===================================-->
 <div class="container profile profile-view" id="guide_view">
@@ -964,11 +1009,7 @@
                     </div>
                 </div>
                 <hr/>
-                <div class="row">
-                    <div class="col-md-12 content-right">
-                        <button class="btn btn-primary form-btn" type="submit"> More</button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </form>
@@ -983,28 +1024,27 @@
                 <h1>Guide Details</h1>
                 <br>
 
-                <div class="input-group"><span class="input-group-text">
-                        <i class="fa fa-search"></i></span>
+                <div class="input-group" ><span class="input-group-text"  style="height: 30px; border: 1px">
+                        <i class="fa fa-search" ></i></span>
                     <input class="form-control" id="guide_search_input" placeholder="Enter ID for search.."
-                           style="height: 40px"
+                           style="height: 30px"
                            type="text"/>
                     <button class="btn btn-light" id="guide_search_button"
-                            style="background-color: #0d6efd; color: white; height: 40px"
                             type="button">Search
                     </button>
                     <button class="btn btn-primary form-btn right" id="manage_guide_btn_new"
-                            style="background-color: #146c43; margin-left: 15px" type="submit">New
+                            style="margin-left: 15px" type="submit">New
                     </button>
                 </div>
                 <hr/>
 
                 <div class="avatar"
                      style="padding-right: 99px;margin-left: -4px;padding-left: 0px;margin-right: 101px;">
-                    <div class="avatar-bg center"
-                         style="margin-left: 36px;padding-right: 0px;padding-left: 0px;margin-right: 32px;"></div>
+                    <div class="avatar-bg center" id="manage_guide_image"
+                         style="margin-left: 36px; border: darkgrey 1px solid ;padding-right: 0px;padding-left: 0px;margin-right: 32px;"></div>
                     <input class="form-control form-control" id="manage_guide_image_file"
                            name="avatar-file" style="width: 146px;padding-right: 314px;margin-right: 10px;
-                           padding-left: 13px;margin-left: 17px;" type="file"/>
+                           padding-left: 13px;margin-left: 17px; margin-top: 15px" type="file"/>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1014,7 +1054,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Guide ID</label>
-                            <input class="form-control" id="manage_guide_id" readonly name="id" type="text"/>
+                            <input class="form-control" id="manage_guide_id" name="id" readonly type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1093,11 +1133,9 @@
                 <div class="row">
                     <div class="col-md-12 content-right" style="padding-bottom: 0px;">
                         <button class="btn btn-primary form-btn" id="guide_manage_btn_add_to_package"
-                                style="background-color: #0d6efd"
                                 type="submit">Add To Package
                         </button>
                         <button class="btn btn-primary form-btn" id="guide_manage_btn_ok"
-                                style="background-color: #146c43"
                                 type="submit"> Ok
                         </button>
                         <hr/>
@@ -1105,11 +1143,9 @@
 
                     <div class="col-md-12 content-right" style="padding-bottom: 10px; margin-top: 15px">
                         <button class="btn btn-primary form-btn" id="guide_manage_btn_add"
-                                style="background-color: #0d6efd"
-                                type="submit">Add Guide
+                                type="submit">Add
                         </button>
                         <button class="btn btn-primary form-btn" id="guide_manage_btn_update"
-                                style="background-color: #146c43"
                                 type="submit">Update
                         </button>
                         <button class="btn btn-danger form-btn" id="guide_manage_btn_delete" type="submit">Delete
@@ -1130,126 +1166,11 @@
                 <h1 style="margin-top: 25px;">Select Your Vehicles!</h1>
             </div>
 
-            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
-                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card">
-                    <img class="card-img-top" src="assert/image/vehicle1.png"/>
-                    <div class="card-body">
-                        <label class="form-label">Vehicle ID : V0001</label>
-                        <label class="form-label">Vehicle Type : Van</label>
-                        <!--                        <label class="form-label">Category : Luxury</label>-->
-                        <label class="form-label">Brand : KDH</label>
-                        <label class="form-label">Seat Capacity : 12</label>
-                        <label class="form-label"></label>
-                        <button class="btn btn-outline-success"
-                                style="font-weight: normal;font-family: Antic, sans-serif;"
-                                type="button">View More
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-light border rounded shadow card"></div>
-            </div>
-            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-            <!--                                                                      src="assert/image/vehicle1.png"/>-->
-            <!--                    <div class="card-body">-->
-            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
-            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-            <!--                        <label class="form-label">Brand : KDH</label>-->
-            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
-            <!--                        <label class="form-label"></label>-->
-            <!--                        <button class="btn btn-outline-success"-->
-            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-            <!--                                type="button">View More  -->
-            <!--                        </button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="bg-light border rounded shadow card"></div>-->
-            <!--            </div>-->
-            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-            <!--                                                                      src="assert/image/vehicle1.png"/>-->
-            <!--                    <div class="card-body">-->
-            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
-            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-            <!--                        <label class="form-label">Brand : KDH</label>-->
-            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
-            <!--                        <label class="form-label"></label>-->
-            <!--                        <button class="btn btn-outline-success"-->
-            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-            <!--                                type="button">View More  -->
-            <!--                        </button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="bg-light border rounded shadow card"></div>-->
-            <!--            </div>-->
-            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-            <!--                                                                      src="assert/image/vehicle1.png"/>-->
-            <!--                    <div class="card-body">-->
-            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
-            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-            <!--                        <label class="form-label">Brand : KDH</label>-->
-            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
-            <!--                        <label class="form-label"></label>-->
-            <!--                        <button class="btn btn-outline-success"-->
-            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-            <!--                                type="button">View More  -->
-            <!--                        </button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="bg-light border rounded shadow card"></div>-->
-            <!--            </div>-->
-            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-            <!--                                                                      src="assert/image/vehicle1.png"/>-->
-            <!--                    <div class="card-body">-->
-            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
-            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-            <!--                        <label class="form-label">Brand : KDH</label>-->
-            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
-            <!--                        <label class="form-label"></label>-->
-            <!--                        <button class="btn btn-outline-success"-->
-            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;"-->
-            <!--                                type="button">View More  -->
-            <!--                        </button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="bg-light border rounded shadow card"></div>-->
-            <!--            </div>-->
-            <!--            <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"-->
-            <!--                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">-->
-            <!--                <div class="bg-light border rounded shadow card"><img class="card-img-top"-->
-            <!--                                                                      src="assert/image/vehicle1.png"/>-->
-            <!--                    <div class="card-body">-->
-            <!--                        <label class="form-label">Vehicle ID : V0001</label>-->
-            <!--                        <label class="form-label">Vehicle Type : Van</label>-->
-            <!--                        &lt;!&ndash;                        <label class="form-label">Category : Luxury</label>&ndash;&gt;-->
-            <!--                        <label class="form-label">Brand : KDH</label>-->
-            <!--                        <label class="form-label">Seat Capacity : 12</label>-->
-            <!--                        <label class="form-label"></label>-->
-            <!--                        <button class="btn btn-outline-success"-->
-            <!--                                style="font-weight: normal;font-family: Antic, sans-serif;" type="button">View More  -->
-            <!--                        </button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="bg-light border rounded shadow card"></div>-->
-            <!--            </div>-->
+            <div class="grid-container" id="vehicle_view_sub_div"></div>
+
+
         </div>
 
-        <div class="content-right" style="margin-top: 10px; margin-bottom: 20px">
-            <button class="btn btn-primary form-btn" id="vehicle_manage_btn_more" style="background-color: #0d6efd"
-                    type="submit"> More
-            </button>
-        </div>
 
     </div>
 </section>
@@ -1267,11 +1188,10 @@
                     <input class="form-control" id="vehicle_search_input" placeholder="Enter ID for search.."
                            style="height: 30px" type="text"/>
                     <button class="btn btn-light" id="vehicle_search_button"
-                            style="background-color: #0d6efd; color: white; height: 32px"
                             type="button">Search
                     </button>
                     <button class="btn btn-primary form-btn right" id="manage_vehicle_btn_new"
-                            style="background-color: #146c43; margin-left: 15px" type="submit">New
+                            style=" margin-left: 15px" type="submit">New
                     </button>
                 </div>
                 <hr/>
@@ -1325,6 +1245,8 @@
                     </div>
                     <div class="col"></div>
                 </div>
+
+
                 <div class="row">
                     <div class="col-sm-12 col-md-7">
                         <div class="form-group mb-3">
@@ -1449,11 +1371,10 @@
                 <div class="row">
                     <div class="col-md-12 content-right"
                          style="padding-bottom: 0px;margin-top: 1px;margin-bottom: 20px;">
-                        <button class="btn btn-primary form-btn" id="manage_vehicle_btn_add_to_package" type="submit">
+                        <button class="btn btn-primary form-btn" style="width: 150px" id="manage_vehicle_btn_add_to_package" type="submit">
                             Add To Package
                         </button>
                         <button class="btn btn-primary form-btn" id="manage_vehicle_btn_ok"
-                                style="background-color: #146c43"
                                 type="submit"> Ok
                         </button>
                     </div>
@@ -1462,8 +1383,7 @@
                          style="padding-bottom: 0px;margin-top: 1px;margin-bottom: 43px;">
                         <button class="btn btn-primary form-btn" id="manage_vehicle_btn_save" type="submit">Save
                         </button>
-                        <button class="btn btn-primary form-btn" id="manage_vehicle_btn_update"
-                                style="background-color: #146c43" type="submit">Update
+                        <button class="btn btn-primary form-btn" id="manage_vehicle_btn_update" type="submit">Update
                         </button>
                         <button class="btn btn-danger form-btn" id="manage_vehicle_btn_delete" type="submit">Delete
                         </button>
@@ -1622,9 +1542,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script src="controller/welcome_page.js" ></script>
-<script src="controller/login.js" ></script>
-<script src="controller/nav_bar.js" ></script>
+<script src="controller/welcome_page.js"></script>
+<script src="controller/login.js"></script>
+<script src="controller/nav_bar.js"></script>
 
 <script src="controller/guide_manage_controller.js" type="module"></script>
 <script src="controller/guide_view_controller.js" type="module"></script>

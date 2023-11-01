@@ -489,3 +489,84 @@ $(document).ready(() => {
 $('#manage_vehicle_btn_add_to_package').on('click', (e) => {
     $('#selected_vehicle').val($("#manage_vehicle_id"));
 })
+
+
+
+//----------------------------------------------- add event for image input  ----------------------------------------
+
+const imageInput1 = document.getElementById('vehicle_manage_image_file1');
+const imageContainer1 = document.getElementById('vehicle_manage_image1');
+
+imageInput1.addEventListener('change', function () {
+    const file = imageInput1.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imageContainer1.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+const imageInput2 = document.getElementById('vehicle_manage_image_file2');
+const imageContainer2 = document.getElementById('vehicle_manage_image2');
+
+imageInput2.addEventListener('change', function () {
+    const file = imageInput2.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imageContainer2.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+const imageInput3 = document.getElementById('vehicle_manage_image_file3');
+const imageContainer3 = document.getElementById('vehicle_manage_image3');
+
+imageInput3.addEventListener('change', function () {
+    const file = imageInput3.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imageContainer3.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
+const imageInput4 = document.getElementById('vehicle_manage_image_file4');
+const imageContainer4 = document.getElementById('vehicle_manage_image4');
+
+imageInput4.addEventListener('change', function () {
+    const file = imageInput4.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imageContainer4.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
+const imageInput5 = document.getElementById('vehicle_manage_image_file5');
+const imageContainer5 = document.getElementById('vehicle_manage_image5');
+
+imageInput5.addEventListener('change', function () {
+    const file = imageInput5.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imageContainer5.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
+
+
+

@@ -315,3 +315,24 @@ $(document).ready(() => {
 $('#guide_manage_btn_add_to_package').on('click', (e) => {
     $('#selected_guide').val($("#manage_guide_id"));
 })
+
+
+
+
+
+
+//----------------------------------------------- add event for image input  ----------------------------------------
+
+const imageInput = document.getElementById('manage_guide_image_file');
+const imageContainer = document.getElementById('manage_guide_image');
+
+imageInput.addEventListener('change', function () {
+    const file = imageInput.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imageContainer.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});

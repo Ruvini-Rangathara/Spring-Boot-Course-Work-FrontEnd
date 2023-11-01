@@ -108,19 +108,24 @@ export function getVehicle(vehicle_id) {
 }
 
 //--------------------------------------  get all vehicles --------------------------------------
-export function getAllVehicles() {
-    return new Promise((resolve, reject) => {
-        let settings = {
-            "url": "http://localhost:9096/vehicle/api/v1/vehicle/getAll", "method": "GET", "timeout": 0,
-        };
-        $.ajax(settings).done(function (response, textStatus, jqXHR) {
-            resolve(response);
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown)
-            reject(errorThrown);
-        });
-    })
+export function getAllVehicles(){
+    return new Promise((resolve,reject)=>{
+            let settings = {
+                "url": "http://localhost:9096/vehicle/api/v1/vehicle/getAll",
+                "method": "GET",
+                "timeout": 0,
+            };
+            $.ajax(settings).done(function (response, textStatus, jqXHR) {
+                console.log("success")
+                resolve(response);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown)
+                reject(errorThrown);
+            });
+        }
+    )
 }
+
 
 //--------------------------------------  get new vehicle id --------------------------------------
 export function getNewVehicleId() {
@@ -157,3 +162,21 @@ export function existsByVehiclesId(vehicle_id) {
 
 
 
+// $(document).ready(() => {
+//     let promise = getAllVehicles();
+//     promise.then((data) => {
+//
+//         console.log("array size: "+data.length)
+//         if (data.length > 0) {
+//             data.forEach((ele) => {
+//                 console.log("vehicle id : "+ele.vehicleId);
+//                 console.log("vehicle type  :"+ele.vehicleType);
+//                 console.log("brand : "+ele.brand);
+//                 console.log("seat capacity : "+ele.seatCapacity);
+//                 createDynamicCard(ele);
+//             });
+//         } else alert("No vehicles found !")
+//     }).catch((e) => {
+//         // alert(e.message);
+//     });
+// })
