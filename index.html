@@ -255,6 +255,22 @@
             <h1 style="margin-top: 21px;">Customize Your Package</h1>
         </div>
     </div>
+
+    <div class="input-group"><span class="input-group-text">
+                        <i class="fa fa-search"></i></span>
+        <input class="form-control" id="package_search_input" placeholder="Enter ID for search.."
+               style="height: 40px"
+               type="text"/>
+        <button class="btn btn-light" id="package_search_button"
+                style="background-color: #0d6efd; color: white; height: 40px"
+                type="button">Search
+        </button>
+        <button class="btn btn-primary form-btn right" id="package_btn_new"
+                style="background-color: #146c43; margin-left: 15px" type="submit">New
+        </button>
+    </div>
+    <hr/>
+
     <form>
         <div class="row profile-row">
             <div class="col-md-12">
@@ -262,17 +278,23 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Package ID</label>
-                            <input class="form-control" id="package_id" name="package_id" type="text"/>
+                            <input class="form-control" id="package_id" readonly name="package_id" type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3"><label class="form-label">Username</label>
-                            <input class="form-control" id="package_username" name="package_username" type="text"/>
+                            <input class="form-control" id="package_username" readonly name="package_username" type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">
                         <div class="form-group mb-3"><label class="form-label">Category</label>
-                            <input class="form-control" id="package_category" name="package_category" type="text"/>
+                            <select id="package_category" name="categories" class="form-control">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="economy">Economy</option>
+                                <option value="mid-range">Mid-Range</option>
+                                <option value="luxury">Luxury</option>
+                                <option value="super-luxury">Super-Luxury</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">
@@ -284,13 +306,14 @@
                         <div class="form-group mb-3">
                             <label class="form-label">Need A Guide Or No</label>
                         </div>
-                        <div class="form-check"><input class="form-check-input" id="need_guide" type="radio"/>
+                        <div class="form-check">
+                            <input class="form-check-input" id="need_guide" type="radio" name="package_need_guide"/>
                             <label class="form-check-label" for="need_guide">Need</label>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-3" style="margin-left: -25px;">
                         <div class="form-check" style="margin-top: 48px;">
-                            <input class="form-check-input" id="no_need_guide" type="radio"/>
+                            <input class="form-check-input" id="no_need_guide" type="radio"  name="package_need_guide"/>
                             <label class="form-check-label" for="no_need_guide">No Need</label>
                         </div>
                     </div>
@@ -299,14 +322,14 @@
                             <label class="form-label">With Pets Or No</label>
                         </div>
                         <div class="form-check" style="margin-top: 15px;">
-                            <input class="form-check-input" id="with_pet" type="radio"/>
+                            <input class="form-check-input" id="with_pet" type="radio"  name="package_with_pet_or_not"/>
                             <label class="form-check-label" for="with_pet">With Pets</label>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-3">
                         <div class="form-group mb-3">
                             <div class="form-check" style="margin-top: 46px;">
-                                <input class="form-check-input" id="without_pet" type="radio"/>
+                                <input class="form-check-input" id="without_pet" type="radio"  name="package_with_pet_or_not"/>
                                 <label class="form-check-label" for="without_pet">Without Pets</label>
                             </div>
                         </div>
@@ -396,7 +419,7 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 01</label>
-                            <input class="form-control" id="opt_1_price" name="firstname" type="text"/>
+                            <input class="form-control" id="opt_1_price" readonly name="firstname" type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-2">
@@ -405,7 +428,7 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 02</label>
-                            <input class="form-control" id="opt_2_price" name="opt_2_price" type="text"/>
+                            <input class="form-control" id="opt_2_price" readonly name="opt_2_price" type="text"/>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-2">
@@ -416,7 +439,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 03</label>
-                            <input autocomplete="off" class="form-control" id="opt_3_price" name="opt_3_price"
+                            <input autocomplete="off" class="form-control" readonly id="opt_3_price" name="opt_3_price"
                                    type="text"/>
                         </div>
                     </div>
@@ -426,7 +449,7 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group mb-3"><label class="form-label">Option 04</label>
-                            <input autocomplete="off" class="form-control" id="opt_4_price" name="opt_4_price"
+                            <input autocomplete="off" class="form-control" readonly id="opt_4_price" name="opt_4_price"
                                    type="text"/>
                         </div>
                     </div>
@@ -435,23 +458,23 @@
                         padding-top: 0px;padding-bottom: 11px;" type="number"/>
                     </div>
                     <div class="col-sm-12 col-md-6"><label class="form-label">Package Value</label>
-                        <input autocomplete="off" class="form-control" id="package_value"
+                        <input autocomplete="off" readonly class="form-control" id="package_value"
                                name="package_value" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6"></div>
                     <div class="col-sm-12 col-md-6">
                         <label class="form-label">Available Promotions</label>
-                        <input autocomplete="off" class="form-control" id="available_promotion"
+                        <input autocomplete="off" readonly class="form-control" id="available_promotion"
                                name="available_promotion" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <label class="form-label">Available Discounts</label>
-                        <input autocomplete="off" class="form-control" id="available_discount"
+                        <input autocomplete="off"  readonly class="form-control" id="available_discount"
                                name="available_discount" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <label class="form-label">Net Total</label>
-                        <input autocomplete="off" class="form-control" id="net_total"
+                        <input autocomplete="off" readonly class="form-control" id="net_total"
                                name="net_total" style="padding-bottom: 6px;margin-bottom: 22px;" type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6"></div>
@@ -471,7 +494,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6" style="margin-top: 15px;">
                         <label class="form-label">Selected Date & Time</label>
-                        <input class="form-control" id="package_selected_date" type="date"/>
+                        <input class="form-control" id="package_selected_date" readonly type="text"/>
                     </div>
                     <div class="col-sm-12 col-md-6"></div>
                     <div class="col-sm-12 col-md-12" style="margin-top: 13px;">
@@ -486,9 +509,15 @@
                         margin-right: -9px;margin-left: 13px;" type="button">  Cancel  
                         </button>
                     </div>
+                    <div class="col-sm-12 col-md-2">
+                    <button class="btn btn-primary form-btn" id="package_btn_update"
+                            style="background-color: #146c43"
+                            type="submit">Update
+                    </button>
+                    </div>
                     <div class="col-sm-12 col-md-2" style="margin-top: 0px;margin-bottom: -54px;">
                         <button class="btn btn-primary" id="btn_save_package"
-                                style="padding-left: 12px;margin-left: -5px;" type="button">   Save   
+                                style="padding-left: 12px;margin-left: -5px;" type="button">   Add Package   
                         </button>
                     </div>
                 </div>
@@ -649,7 +678,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Hotel Code</label>
-                            <input autocomplete="off" class="form-control" id="manage_hotel_code"
+                            <input autocomplete="off" class="form-control" readonly id="manage_hotel_code"
                                    name="manage_hotel_code"
                                    type="text"/>
                         </div>
@@ -766,66 +795,66 @@
 </div>
 
 
-<!--======================================   discount view  =======================================-->
-<div class="discount_view_container py-4 py-xl-5">
-    <div class="row mb-5">
-        <div class="col-md-8 col-xl-6 text-center mx-auto">
-            <h2>Hotel Aknara Panadura</h2>
-            <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc.
-                Vestibulum dui eget ultrices.</p>
-        </div>
-    </div>
-    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="discount_view_sub_div">
-        <div class="col-md-4">
-            <div class="p-4">
-                <h4 style="margin-bottom: -1px;">Discount Code : DIS0001</h4>
-                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>
-                <label class="form-label" style="margin-bottom: 1px;">Upper Range : 500000.00</label><br>
-                <label class="form-label" style="margin-bottom: 1px;">Discount Rate : 5.00</label>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4">
-                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>
-                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4">
-                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>
-                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4">
-                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>
-                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4">
-                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>
-                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4">
-                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>
-                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>
-                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>
-            </div>
-        </div>
-    </div>
-</div>
+<!--&lt;!&ndash;======================================   discount view  =======================================&ndash;&gt;-->
+<!--<div class="discount_view_container py-4 py-xl-5">-->
+<!--    <div class="row mb-5">-->
+<!--        <div class="col-md-8 col-xl-6 text-center mx-auto">-->
+<!--            <h2>Hotel Aknara Panadura</h2>-->
+<!--            <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc.-->
+<!--                Vestibulum dui eget ultrices.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="discount_view_sub_div">-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="p-4">-->
+<!--                <h4 style="margin-bottom: -1px;">Discount Code : DIS0001</h4>-->
+<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 1px;">Upper Range : 500000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 1px;">Discount Rate : 5.00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="p-4">-->
+<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
+<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="p-4">-->
+<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
+<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="p-4">-->
+<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
+<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="p-4">-->
+<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
+<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="p-4">-->
+<!--                <h4 style="margin-bottom: 0px;">Discount Code : DIS0001</h4>-->
+<!--                <label class="form-label" style="margin-bottom: -1px;">Lower Range : 30000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Upper Range : 500000.00</label><br>-->
+<!--                <label class="form-label" style="margin-bottom: 0px;">Discount Rate : 5.00</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <!--=====================================   guide view  ===================================-->
@@ -985,7 +1014,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Guide ID</label>
-                            <input class="form-control" id="manage_guide_id" name="id" type="text"/>
+                            <input class="form-control" id="manage_guide_id" readonly name="id" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1300,7 +1329,7 @@
                     <div class="col-sm-12 col-md-7">
                         <div class="form-group mb-3">
                             <label class="form-label" style="margin-top: 7px;padding-top: 27px;">Vehicle ID</label>
-                            <input class="form-control" id="manage_vehicle_id"
+                            <input class="form-control" id="manage_vehicle_id" readonly
                                    type="text"/>
                         </div>
                     </div>

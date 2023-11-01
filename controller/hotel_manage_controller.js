@@ -176,8 +176,6 @@ $('#hotel_manage_btn_add').on('click', (e) => {
 
         };
 
-        console.log("star rate : "+$('#manage_hotel_star_rate').val());
-
         saveHotel(requestHotel).then((resolve) => {
             Swal.fire({
                 title: 'Success',
