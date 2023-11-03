@@ -197,9 +197,16 @@
             }
         }
 
-    </style>
+        @media (min-width: 768px)
+        .col-md-4 {
+            flex: 0 0 auto;!important;
+            width: 100%; !important;
+        }
 
+    </style>
     <script src="assert/jquery-3.7.0.min.js"></script>
+    <script src="controller/guide_view_controller.js" type="module"></script>
+
 </head>
 <body id="body">
 
@@ -388,7 +395,7 @@
     <hr/>
 
     <form>
-        <div class="row profile-row">
+        <div class="row profile-row" id="package_form" >
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
@@ -654,66 +661,8 @@
             <p class="text-muted text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum
                 nibh erat, pellentesque ut laoreet vitae.  </p>
         </div>
-        <div class="row">
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3 id="hotel_view_name">Aknara Water Front</h3>
-                <label id="hotel_view_code">Hotel Code : H0001</label><br>
-                <label id="hotel_view_category">Category : Luxury</label><br>
-                <label id="hotel_view_location">Location : Panadura</label>
-                <button class="btn btn-primary form-btn" id="hotel_view_view_btn" style="background-color: #146c43"
-                        type="submit">View
-                </button>
-            </div>
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3>Aknara Water Front</h3>
-                <label>Hotel Code : H0001</label><br>
-                <label>Category : Luxury</label><br>
-                <label>Location : Panadura</label>
-                <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">View</button>
-            </div>
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3>Aknara Water Front</h3>
-                <label>Hotel Code : H0001</label><br>
-                <label>Category : Luxury</label><br>
-                <label>Location : Panadura</label>
-                <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">View</button>
-            </div>
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3>Aknara Water Front</h3>
-                <label>Hotel Code : H0001</label><br>
-                <label>Category : Luxury</label><br>
-                <label>Location : Panadura</label>
-                <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">View</button>
-            </div>
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3>Aknara Water Front</h3>
-                <label>Hotel Code : H0001</label><br>
-                <label>Category : Luxury</label><br>
-                <label>Location : Panadura</label>
-                <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">View</button>
-            </div>
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3>Aknara Water Front</h3>
-                <label>Hotel Code : H0001</label><br>
-                <label>Category : Luxury</label><br>
-                <label>Location : Panadura</label>
-                <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">View</button>
-            </div>
-            <div class="col-md-3 cust_blogteaser" style="padding-bottom: 177px;margin-bottom: -152px;">
-                <a href="#"><img class="img-fluid" src="assert/image/hotel9.jpeg"/></a>
-                <h3>Aknara Water Front</h3>
-                <label>Hotel Code : H0001</label><br>
-                <label>Category : Luxury</label><br>
-                <label>Location : Panadura</label>
-                <button class="btn btn-primary form-btn" style="background-color: #146c43" type="submit">View</button>
-            </div>
-        </div>
+
+        <div class="grid-container3" id="hotel_view_sub_div" style="margin-bottom: 50px"></div>
 
 
     </div>
@@ -917,96 +866,100 @@
                 <h1>Select Your Guide! </h1>
                 <hr/>
                 <div class="row">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Guide ID : G0001</h5>
-                                    <label>Name : Ruvini Rangathara</label><br>
-                                    <label>Gender : Female</label><br>
-                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"
-                                            type="submit">View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Guide ID : G0001</h5>
-                                    <label>Name : Ruvini Rangathara</label><br>
-                                    <label>Gender : Female</label><br>
-                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"
-                                            type="submit">View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Guide ID : G0001</h5>
-                                    <label>Name : Ruvini Rangathara</label><br>
-                                    <label>Gender : Female</label><br>
-                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"
-                                            type="submit">View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Guide ID : G0001</h5>
-                                    <label>Name : Ruvini Rangathara</label><br>
-                                    <label>Gender : Female</label><br>
-                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"
-                                            type="submit">View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Guide ID : G0001</h5>
-                                    <label>Name : Ruvini Rangathara</label><br>
-                                    <label>Gender : Female</label><br>
-                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"
-                                            type="submit">View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Guide ID : G0001</h5>
-                                    <label>Name : Ruvini Rangathara</label><br>
-                                    <label>Gender : Female</label><br>
-                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"
-                                            type="submit">View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <div class="grid-container2" id="guide_view_sub_div" style="margin-bottom: 50px"></div>
+
+
+<!--                    <div class="card mb-3" style="max-width: 540px;">-->
+<!--                        <div class="row g-0">-->
+<!--                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Guide ID : G0001</h5>-->
+<!--                                    <label>Name : Ruvini Rangathara</label><br>-->
+<!--                                    <label>Gender : Female</label><br>-->
+<!--                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"-->
+<!--                                            type="submit">View-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card mb-3" style="max-width: 540px;">-->
+<!--                        <div class="row g-0">-->
+<!--                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Guide ID : G0001</h5>-->
+<!--                                    <label>Name : Ruvini Rangathara</label><br>-->
+<!--                                    <label>Gender : Female</label><br>-->
+<!--                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"-->
+<!--                                            type="submit">View-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card mb-3" style="max-width: 540px;">-->
+<!--                        <div class="row g-0">-->
+<!--                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Guide ID : G0001</h5>-->
+<!--                                    <label>Name : Ruvini Rangathara</label><br>-->
+<!--                                    <label>Gender : Female</label><br>-->
+<!--                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"-->
+<!--                                            type="submit">View-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card mb-3" style="max-width: 540px;">-->
+<!--                        <div class="row g-0">-->
+<!--                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Guide ID : G0001</h5>-->
+<!--                                    <label>Name : Ruvini Rangathara</label><br>-->
+<!--                                    <label>Gender : Female</label><br>-->
+<!--                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"-->
+<!--                                            type="submit">View-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card mb-3" style="max-width: 540px;">-->
+<!--                        <div class="row g-0">-->
+<!--                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Guide ID : G0001</h5>-->
+<!--                                    <label>Name : Ruvini Rangathara</label><br>-->
+<!--                                    <label>Gender : Female</label><br>-->
+<!--                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"-->
+<!--                                            type="submit">View-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card mb-3" style="max-width: 540px;">-->
+<!--                        <div class="row g-0">-->
+<!--                            <div class="col-md-4"><img alt="..." class="img-fluid" src="assert/image/guide1.png"/></div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">Guide ID : G0001</h5>-->
+<!--                                    <label>Name : Ruvini Rangathara</label><br>-->
+<!--                                    <label>Gender : Female</label><br>-->
+<!--                                    <button class="btn btn-primary form-btn" style="background-color: #0d6efd"-->
+<!--                                            type="submit">View-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <hr/>
 
@@ -1166,7 +1119,7 @@
                 <h1 style="margin-top: 25px;">Select Your Vehicles!</h1>
             </div>
 
-            <div class="grid-container" id="vehicle_view_sub_div"></div>
+            <div class="grid-container" id="vehicle_view_sub_div" style="margin-bottom: 50px"></div>
 
 
         </div>
@@ -1552,6 +1505,9 @@
 <script src="controller/hotel_view_controller.js" type="module"></script>
 <script src="controller/vehicle_manage_controller.js" type="module"></script>
 <script src="controller/vehicle_view_controller.js" type="module"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

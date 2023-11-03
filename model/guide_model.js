@@ -110,6 +110,7 @@ export function getGuide (guideId){
 
 //----------------------------------------   get all guides  ----------------------------------------
 export function getAllGuides (){
+    console.log("get all guides in guide model")
     return new Promise((resolve, reject) => {
         let settings = {
             "url": "http://localhost:9095/guide/api/v1/guide/getAll",

@@ -96,12 +96,12 @@ function validateGuideDetails() {
                 if ($('input[name="manage_guide_gender"]:checked').val() != null) {
                     if (age_regex.test($('#manage_guide_age').val())) {
                         if (man_day_value_regex.test($('#manage_guide_man_day_value').val())) {
-                            if (checkImages()) {
+                            // if (checkImages()) {
                                 return true;
-                            } else {
-                                alert("Please upload all images");
-                                return false;
-                            }
+                            // } else {
+                            //     alert("Please upload all images");
+                            //     return false;
+                            // }
                         } else {
                             alert("Please enter a valid value for man day value");
                             return false;
@@ -280,12 +280,11 @@ $('#guide_search_button').on('click', (e) => {
     if (guide_id_regex.test($("#guide_search_input").val())) {
         getGuide($('#guide_search_input').val()).then((data) => {
 
-            $('#manage_guide_name').val(data.name);
+            $("#manage_guide_name").val(data.name);
             $('#manage_guide_id').val(data.guideId);
             $('#manage_guide_age').val(data.age);
             $('#manage_guide_address').val(data.address);
             $('#manage_guide_contact').val(data.contactNo);
-            console.log("contact no : " + data.contactNo);
 
             $('#manage_guide_experience').val(data.experience);
             $('#manage_guide_man_day_value').val(data.manDayValue);
@@ -311,17 +310,31 @@ $(document).ready(() => {
     clearGuideForm();
 })
 
+
 //-------------------------------------------- add to package ------------------------------------
 $('#guide_manage_btn_add_to_package').on('click', (e) => {
-    $('#selected_guide').val($("#manage_guide_id"));
-})
+    e.preventDefault();
+    $('#selected_guide').val($("#manage_guide_id").val());
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Guide Added Successfully!',
+        showConfirmButton: true,
+        timer: 0
+    }).then((result) => {
+        // Define the target section you want to scroll to
+        const targetSection = $('#package_form');
+
+        if (targetSection.length > 0) {
+            // Scroll to the target section
+            $('html, body').animate({
+                scrollTop: targetSection.offset().top
+            }, 1000); // You can adjust the duration (1000ms) as needed.
+        }
+    });
+});
 
 
-
-
-
-
-//----------------------------------------------- add event for image input  ----------------------------------------
 
 const imageInput = document.getElementById('manage_guide_image_file');
 const imageContainer = document.getElementById('manage_guide_image');
@@ -336,3 +349,13 @@ imageInput.addEventListener('change', function () {
         reader.readAsDataURL(file);
     }
 });
+
+
+
+
+
+
+
+
+
+

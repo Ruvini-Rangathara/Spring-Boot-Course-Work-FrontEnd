@@ -337,13 +337,28 @@ $(document).ready(function () {
     clearHotelForm();
 })
 
-
 //-------------------------------------------- add to package ------------------------------------
 $('#hotel_manage_btn_add_to_package').on('click', (e) => {
-    $('#selected_hotel').val($("#manage_hotel_code"));
-})
+    e.preventDefault();
+    $('#selected_hotel').val($("#manage_hotel_code").val());
 
+    Swal.fire({
+        icon: 'success',
+        title: 'Hotel Added Successfully!',
+        showConfirmButton: true,
+        timer: 0
+    }).then((result) => {
+        // Define the target section you want to scroll to
+        const targetSection = $('#package_form');
 
+        if (targetSection.length > 0) {
+            // Scroll to the target section
+            $('html, body').animate({
+                scrollTop: targetSection.offset().top
+            }, 1000); // You can adjust the duration (1000ms) as needed.
+        }
+    });
+});
 
 
 //----------------------------------------------- add event for image input  ----------------------------------------

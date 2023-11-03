@@ -103,7 +103,7 @@ function validateVehicleDetails() {
                     if ($('#manage_vehicle_fuel_type').val() != null) {
                         if ($("input[name='manage_hybrid_or_non_hybrid']:checked").val() != null) {
                             if ($('#manage_vehicle_fuel_usage').val() > 0) {
-                                if (checkImages()) {
+                                // if (checkImages()) {
                                     if ($("#manage_vehicle_type").val() != null) {
                                         if ($("input[name='manage_vehicle_availability']:checked").val() != null) {
                                             if ($("input[name='manage_transmission_type']:checked").val() != null) {
@@ -121,9 +121,9 @@ function validateVehicleDetails() {
                                     } else {
                                         alert("Select type of your vehicle!");
                                     }
-                                } else {
-                                    alert("Select photos of your vehicle!")
-                                }
+                                // } else {
+                                //     alert("Select photos of your vehicle!")
+                                // }
                             } else {
                                 alert("Input Vehicle Fuel usage!")
                             }
@@ -328,7 +328,7 @@ $('#manage_vehicle_btn_update').on('click', (e) => {
                     remark: $('#vehicle_remark').val(),
                 }
                 updateVehicle(vehicle).then((resolve) => {
-                    console.log("updateVehicle  : "+resolve)
+                    console.log("updateVehicle  : " + resolve)
                     Swal.fire({
                         title: 'Success',
                         text: 'Vehicle details updated successfully!',
@@ -487,9 +487,26 @@ $(document).ready(() => {
 
 //-------------------------------------------- add to package ------------------------------------
 $('#manage_vehicle_btn_add_to_package').on('click', (e) => {
-    $('#selected_vehicle').val($("#manage_vehicle_id"));
-})
+    e.preventDefault();
+    $('#selected_vehicle').val($("#manage_vehicle_id").val());
 
+    Swal.fire({
+        icon: 'success',
+        title: 'Vehicle Added Successfully!',
+        showConfirmButton: true,
+        timer: 0
+    }).then((result) => {
+        // Define the target section you want to scroll to
+        const targetSection = $('#package_form');
+
+        if (targetSection.length > 0) {
+            // Scroll to the target section
+            $('html, body').animate({
+                scrollTop: targetSection.offset().top
+            }, 1000); // You can adjust the duration (1000ms) as needed.
+        }
+    });
+});
 
 
 //----------------------------------------------- add event for image input  ----------------------------------------
@@ -565,8 +582,4 @@ imageInput5.addEventListener('change', function () {
         reader.readAsDataURL(file);
     }
 });
-
-
-
-
 

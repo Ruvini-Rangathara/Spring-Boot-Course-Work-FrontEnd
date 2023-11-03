@@ -1,37 +1,8 @@
-import {
-    getAllVehicles
-} from "../model/vehicle_model.js";
+import {getAllVehicles, getVehicle} from "../model/vehicle_model.js";
 
 
 //------------------------------------------------------------------------------------------
 // get all vehicles ------------------------------------------------------------------------
-function createVehicleCard(data) {
-
-    const elementHTML = `
-      <div class="col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
-                 style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card">
-                    <img class="card-img-top" src="data:image/png;base64,${data.images[0]}" alt="Card image cap">
-                    <div class="card-body">
-                        <label class="form-label">Vehicle ID : V0001</label>
-                        <label class="form-label">Vehicle Type : Van</label>
-                        <!--                        <label class="form-label">Category : Luxury</label>-->
-                        <label class="form-label">Brand : KDH</label>
-                        <label class="form-label">Seat Capacity : 12</label>
-                        <label class="form-label"></label>
-                        <button class="btn btn-outline-success"
-                                style="font-weight: normal;font-family: Antic, sans-serif;"
-                                type="button">View More
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-light border rounded shadow card"></div>
-            </div>
-           `;
-
-    document.getElementsByClassName('vehicle_grid_container')[0].innerHTML += elementHTML;
-}
-
 
 function createDynamicCard(vehicleData) {
     const colDiv = document.createElement("div");
@@ -47,7 +18,7 @@ function createDynamicCard(vehicleData) {
 
     const imgElement = document.createElement("img");
     imgElement.className = "card-img-top";
-    imgElement.src = `data:image/png;base64,${vehicleData.images[0]}`;
+    imgElement.src = "assert/image/img.png";
 
     const cardBodyDiv = document.createElement("div");
     cardBodyDiv.className = "card-body";
@@ -85,6 +56,10 @@ function createDynamicCard(vehicleData) {
     viewMoreButton.style.justifyContent = "center";
     viewMoreButton.style.alignItems = "center";
 
+    viewMoreButton.addEventListener("click", function () {
+        viewOnVehicleCard(vehicleData.vehicleId);
+    });
+
 
     cardBodyDiv.appendChild(viewMoreButton);
 
@@ -94,7 +69,6 @@ function createDynamicCard(vehicleData) {
 
     return colDiv;
 }
-
 
 function setVehicleCards(data) {
     const sampleVehicleData = {
@@ -107,26 +81,96 @@ function setVehicleCards(data) {
     container.appendChild(dynamicCard);
 }
 
+function viewOnVehicleCard(id) {
+    console.log("view on vehicle card clicked : " + id)
+
+
+    getVehicle(id).then(data => {
+
+        console.log("search")
+        // Set the vehicle data into form elements
+        $('#manage_vehicle_id').val(data.vehicleId);
+        $('#manage_vehicle_brand').val(data.brand);
+        $('#manage_vehicle_category').val(data.category);
+        $('#manage_vehicle_price_per_day').val(data.pricePerDay);
+
+        console.log(data.pricePerDay)
+
+        $('#manage_vehicle_fuel_type').val(data.fuelType);
+        $('#manage_vehicle_fuel_usage').val(data.fuelUsage);
+
+        selectRadioButtonManageTransmissionType(data.transmissionType);
+        selectRadioButtonManageHybridOrNonHybrid(data.hybridOrNon);
+        selectRadioButtonManageVehicleAvailability(data.availability);
+
+        $('#manage_vehicle_seat_capacity').val(data.seatCapacity);
+        $('#manage_vehicle_type').val(data.vehicleType);
+        $('#vehicle_remark').val(data.remark);
+
+        // Set vehicle image previews
+        // setImages(data.images);
+
+        const driverData = data.driver;
+
+        // Set the driver data into the form elements
+        $('#manage_vehicle_driver_id').val(driverData.driverId);
+        $('#manage_vehicle_driver_name').val(driverData.name);
+        $('#manage_vehicle_driver_contact_no').val(driverData.contactNo);
+
+
+        alert("Vehicle found !");
+    }).catch(e => {
+        console.log(e.message)
+        alert("Error in getting vehicle details !" + e);
+    })
+}
+
+
+//-----------------------  select Radio Button Manage TransmissionT ype  ---------------------------------
+function selectRadioButtonManageTransmissionType(transmissionType) {
+    if (transmissionType === 'Manual') {
+        $('#manage_vehicle_radio_manual').prop('checked', true);
+    } else if (transmissionType === 'Auto') {
+        $('#manage_vehicle_radio_auto').prop('checked', true);
+    }
+}
+
+//----------------------  select Radio Button Manage Hybrid Or NonHybrid  --------------------------------
+function selectRadioButtonManageHybridOrNonHybrid(hybridOrNon) {
+    if (hybridOrNon === 'Hybrid') {
+        $('#manage_vehicle_radio_hybrid').prop('checked', true);
+    } else if (hybridOrNon === 'Non-Hybrid') {
+        $('#manage_vehicle_radio_non_hybrid').prop('checked', true);
+    }
+}
+
+//------------------------  select Radio Button Manage Vehicle Availability  -----------------------------
+function selectRadioButtonManageVehicleAvailability(availability) {
+    if (availability === 'Available') {
+        $('#manage_vehicle_radio_available').prop('checked', true);
+    } else if (availability === 'Unavailable') {
+        $('#manage_vehicle_radio_non_available').prop('checked', true);
+    }
+}
+
+
+
 $(document).ready(() => {
+    console.log("ready in vehicle view");
 
     let promise = getAllVehicles();
     promise.then((data) => {
 
-        console.log("array size: " + data.length)
+        console.log("array size of vehicle : " + data.length)
         if (data.length > 0) {
             data.forEach((ele) => {
                 setVehicleCards(ele);
-                console.log(ele.images[0]);
             });
         } else alert("No vehicles found !")
     }).catch((e) => {
-        // alert(e.message);
+        alert(e.message);
     });
 
 })
-
-
-
-
 
 
