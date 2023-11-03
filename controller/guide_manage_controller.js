@@ -285,6 +285,7 @@ $('#guide_search_button').on('click', (e) => {
             $('#manage_guide_age').val(data.age);
             $('#manage_guide_address').val(data.address);
             $('#manage_guide_contact').val(data.contactNo);
+            console.log("contact in guide manage controller frontend : " + $("#manage_guide_contact").val());
 
             $('#manage_guide_experience').val(data.experience);
             $('#manage_guide_man_day_value').val(data.manDayValue);

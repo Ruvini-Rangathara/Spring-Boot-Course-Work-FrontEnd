@@ -7,8 +7,8 @@ function createDynamicHotelCard(hotelData) {
     const colDiv = document.createElement("div");
     colDiv.className = "col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4";
     colDiv.style.padding = "15px";
-    colDiv.style.width = "250px";
-    colDiv.style.height = "350px";
+    colDiv.style.width = "250px !important";
+    colDiv.style.height = "350px !important";
 
 
     const cardDiv = document.createElement("div");
@@ -27,8 +27,10 @@ function createDynamicHotelCard(hotelData) {
     cardBodyDiv.style.alignItems = "center"
 
 
-    const labels = ["Hotel Code : " + hotelData.hotelCode,
-        "Location : " + hotelData.location, "Category : " + hotelData.category,
+    const labels = [
+        "Hotel Code : " + hotelData.hotelCode,
+        "Location : " + hotelData.location,
+        "Category : " + hotelData.category,
         "Star Rate : " + hotelData.starRate,];
 
 
@@ -73,7 +75,9 @@ function createDynamicHotelCard(hotelData) {
 
 function setHotelCards(data) {
     const sampleHotelData = {
-        hotelCode: data.hotelCode, category: data.category, location: data.location,
+        hotelCode: data.hotelCode,
+        category: data.category,
+        location: data.location,
         starRate: data.starRate
     };
 

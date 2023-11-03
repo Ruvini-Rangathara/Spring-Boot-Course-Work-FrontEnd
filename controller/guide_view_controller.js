@@ -2,10 +2,12 @@ import { getAllGuides, getGuide } from "../model/guide_model.js";
 
 function createDynamicGuideCard(guideData) {
     const colDiv = document.createElement("div");
-    colDiv.className = "col-auto col-sm-12 col-md-4 col-lg-4 col-xl-4";
+    colDiv.className = "col-auto col-sm-12 col-lg-4 col-xl-4";
     colDiv.style.padding = "15px";
-    colDiv.style.width = "250p !important";
-    colDiv.style.height = "350px !important";
+    colDiv.style.width = "250px";
+    colDiv.style.height = "350px";
+    colDiv.style.marginBottom = "20px";
+
 
     const cardDiv = document.createElement("div");
     cardDiv.className = "bg-light border rounded shadow card";
@@ -13,29 +15,34 @@ function createDynamicGuideCard(guideData) {
 
     const imgElement = document.createElement("img");
     imgElement.className = "card-img-top";
-    imgElement.src = "assert/image/img.png"; // Assuming the correct path to your image
+    imgElement.src = "assert/image/img.png";
 
     const cardBodyDiv = document.createElement("div");
     cardBodyDiv.className = "card-body";
     cardBodyDiv.style.display = "flex";
     cardBodyDiv.style.flexDirection = "column";
     cardBodyDiv.style.justifyContent = "center";
-    cardBodyDiv.style.alignItems = "center";
+    cardBodyDiv.style.alignItems = "center"
 
     const labels = [
         "Guide ID : " + guideData.guideId,
         "Name : " + guideData.name,
-        "Price Per Day : " + guideData.pricePerDay,
+        "Man Day Value : " + guideData.manDayValue,
         "Experience : " + guideData.experience,
     ];
 
+
+
     labels.forEach((labelText) => {
-        const labelDiv = document.createElement("div");
+        const labelDiv = document.createElement("div"); // Create a <div> for each label
         labelDiv.className = "form-label";
         labelDiv.textContent = labelText;
         labelDiv.style.margin = "0px";
-        cardBodyDiv.appendChild(labelDiv);
+
+
+        cardBodyDiv.appendChild(labelDiv); // Append the <div> to the card body
     });
+
 
     const viewMoreButton = document.createElement("button");
     viewMoreButton.className = "btn btn-outline-success";
@@ -52,8 +59,9 @@ function createDynamicGuideCard(guideData) {
     viewMoreButton.style.alignItems = "center";
 
     viewMoreButton.addEventListener("click", function () {
-        viewOnGuideCard(guideData.guideId); // Pass the guideId to the function
+        viewOnGuideCard(guideData.guideId);
     });
+
 
     cardBodyDiv.appendChild(viewMoreButton);
 
@@ -64,10 +72,13 @@ function createDynamicGuideCard(guideData) {
     return colDiv;
 }
 
+
+
 function setGuideCards(data) {
     const sampleGuideData = {
-        guideId: data.guideId, name: data.name,
-        pricePerDay: data.pricePerDay,
+        guideId: data.guideId,
+        name: data.name,
+        manDayValue: data.manDayValue,
         experience: data.experience
     };
 
